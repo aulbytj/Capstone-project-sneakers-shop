@@ -13,22 +13,20 @@ body {
   font-family: $roboto;
 }
 
-
 body {
   display: grid;
-  grid-template-columns: 260px 2fr 2fr 260px;
+  grid-template-columns: 260px auto 260px;
   grid-template-areas:
-  "header main side aside"
-  "header main side aside"
-  "header main side aside"
-  "header main side aside";
+  "header main aside"
+  "header main aside"
+  "header main aside"
+  "header main aside"
+  ;
   height: 100vh;
 }
 
-.side {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding-left: 5px;
+div#SL_balloon_obj {
+  display: none;
 }
 
 header {
@@ -39,10 +37,12 @@ header {
     height: 100%;
     position: relative;
     
+    .toggle:checked ~ nav {
+      display: block;
+    }
 
     nav {
-      opacity: 0;
-      display: inline-flex;
+      display: none;
       align-self: center;
       position: absolute;
       left: 100%;
@@ -107,26 +107,61 @@ header {
     }
 
   }
+
  
 }
 
-main {
+.categories {
   grid-area: main;
+  display: flex;
+  flex-flow: row wrap;
+  height: 100vh;
 
-  &.main {
-    background-image: url(/images/hero.jpg);
-    background-size: cover;
+  .categories__items {
+    width: calc(100% / 3);
+    height: 50%;
+  }
+
+  .categories__items:nth-of-type(1) {
+    background-color: red;
+    background-image: url(/images/suit-burgundy.jpg);
+    background-size: 100% auto;
+    background-position: center;
+    
+  }
+  .categories__items:nth-of-type(2) {
+    background-color: blue;
+    background-image: url(/images/suit-jacket-blue-2.jpg);
+    background-size: 100% auto;
     background-position: center;
   }
-}
-
-.side {
-  grid-area: side;
-
-  &__top {
-    background-image: url(/images/side.jpg);
-    background-size: cover;
+  .categories__items:nth-of-type(3) {
+    background-color: goldenrod;
+    background-image: url(/images/suit-jacket-red.jpg);
+    background-size: 100% auto;
     background-position: center;
+  }
+  .categories__items:nth-of-type(4) {
+    background-color: orange;
+    background-image: url(/images/suit-jacket-blue.jpg);
+    background-size: 100% auto;
+    background-position: center;
+  }
+  .categories__items:nth-of-type(5) {
+    background-color: whitesmoke;
+    background-image: url(/images/suite-brown.jpg);
+    background-size: 100% auto;
+    background-position: center;
+  }
+  .categories__items:nth-of-type(6) {
+    background-color: lawngreen;
+    background-image: url(/images/suit-burgundy.jpg);
+    background-size: 100% auto;
+    background-position: center;
+  }
+
+  .title {
+    font-size: 2.75rem;
   }
 }
 
@@ -156,7 +191,7 @@ aside {
       width: 220px;
       border-radius: 50px;
       height: $size;
-      width: $size; /* shrinks the size of the search area */
+      width: $size; // shrinks the size of the search area 
       padding: 3px;
       position: relative;
       transition: width 300ms cubic-bezier(.22,.21,.27,1.25);
@@ -165,7 +200,7 @@ aside {
     
 
       &__input {
-        flex-grow: 1; /* allows the input to take up the entire width */
+        flex-grow: 1; // allows the input to take up the entire width 
         font-size: 1rem;
         // width: 180px;
         padding: 0 0.1em;
@@ -220,48 +255,7 @@ aside {
   }
 }
 
-.fade-up {
-  animation: appear 5s;
-}
 
-.fade-slide {
-  animation: slide 5s;
-}
 
-.fade-in {
-  animation: show 5s;
-}
 
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
 
-  to {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
- @keyframes slide {
-    from {
-      opacity: 0;
-      transform: translateX(100px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-}
-
-@keyframes show {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
