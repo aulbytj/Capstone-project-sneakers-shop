@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+body {overflow: hidden;}
+
+$grid__cols: 12;
+@for $i from 1 through $grid__cols {
+  .col-#{$i} {
+    flex-basis: (100 / ($grid__cols / $i) * 1%);
+  }
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+.container {
+  background: rebeccapurple;
+  border: 1ps solid blue($color: #c5bfbf);
+  display: flex;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.hero,
+.right-side{
+  flex: 1;
+}
+
+.header,
+aside {
+  width: 265px;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+.right-side {
+  --height: 50%;
+  background-color: rgb(255, 255, 255);
+
+  &__image {
+    height: var(--height);
+  }
+
+  &__categories {
+    height: var(--height);
+  }
+}
+
+
+
+
+
