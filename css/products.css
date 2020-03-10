@@ -3,16 +3,6 @@
           box-sizing: border-box;
 }
 
-body {
-  overflow-x: hidden;
-  margin: 0;
-  font-family: "Roboto Slab", serif;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 5fr 1fr;
-      grid-template-columns: 1fr 5fr 1fr;
-}
-
 header {
   -ms-grid-column: 1;
   grid-column: 1;
@@ -31,10 +21,8 @@ header .menu {
 header .header {
   display: -ms-grid;
   display: grid;
-  height: 900px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0em;
+  height: 100%;
+  position: relative;
 }
 
 header .header .toggle {
@@ -205,190 +193,6 @@ header .header__social ul {
   line-height: 2.5em;
 }
 
-main {
-  -ms-grid-column: 2;
-  grid-column: 2;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 5;
-  grid-row: 1 / 6;
-}
-
-main .categories {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: 1 / auto;
-      grid-template-rows: 1 / auto;
-  grid-gap: 2px;
-  height: auto;
-}
-
-main .categories .categories__items {
-  height: 50vh;
-  background-color: #ebe8e8;
-}
-
-main .categories .wallpaper {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1 / span 3;
-  -ms-grid-row: 12;
-  -ms-grid-row-span: 3;
-  grid-row: 12 / 15;
-  background-image: url(/images/background.jpg);
-  background-size: 100% auto;
-  background-position: center;
-  height: 600px;
-}
-
-main .categories .title__suits {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1 / span 3;
-  -ms-grid-row: 1;
-  grid-row: 1;
-  font-size: 2.25rem;
-  top: 16px;
-  margin: 0;
-  text-shadow: 2px 2px 1px #b0cbf9;
-  font-family: "Alfa Slab One", cursive;
-}
-
-main .categories .title__ties {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1 / span 3;
-  -ms-grid-row: 6;
-  grid-row: 6;
-  font-size: 2.25rem;
-  top: 16px;
-  margin: 0;
-  text-shadow: 2px 2px 1px #b0cbf9;
-  font-family: "Alfa Slab One", cursive;
-}
-
-main .categories .title__shoes {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1 / span 3;
-  -ms-grid-row: 16;
-  grid-row: 16;
-  font-size: 2.25rem;
-  top: 16px;
-  margin: 0;
-  text-shadow: 2px 2px 1px #b0cbf9;
-  font-family: "Alfa Slab One", cursive;
-}
-
-main .categories .categories__items:nth-of-type(1) {
-  -ms-grid-column: 1;
-  grid-column: 1;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 4;
-  grid-row: 2 / 6;
-  background-image: url(/images/suit-burgundy.png);
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-main .categories .categories__items:nth-of-type(2) {
-  -ms-grid-column: 2;
-  grid-column: 2;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 4;
-  grid-row: 2 / 6;
-  background-image: url(/images/suit-jacket-blue-2.png);
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-main .categories .categories__items:nth-of-type(3) {
-  -ms-grid-column: 3;
-  grid-column: 3;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 4;
-  grid-row: 2 / 6;
-  background-image: url(/images/suit-jacket-red.png);
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-main .categories .categories__items:nth-of-type(4) {
-  -ms-grid-column: 1;
-  grid-column: 1;
-  -ms-grid-row: 7;
-  -ms-grid-row-span: 3;
-  grid-row: 7 / 10;
-  background-image: url(/images/blue-gold-tie.png);
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-main .categories .categories__items:nth-of-type(5) {
-  -ms-grid-column: 2;
-  grid-column: 2;
-  -ms-grid-row: 7;
-  -ms-grid-row-span: 3;
-  grid-row: 7 / 10;
-  background-image: url(/images/red-dot-blue-tie.png);
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-main .categories .categories__items:nth-of-type(6) {
-  -ms-grid-column: 3;
-  grid-column: 3;
-  -ms-grid-row: 7;
-  -ms-grid-row-span: 3;
-  grid-row: 7 / 10;
-  background-image: url(/images/suit-burgundy.png);
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-main .categories .categories__items:nth-of-type(7) {
-  -ms-grid-column: 1;
-  grid-column: 1;
-  -ms-grid-row: 17;
-  -ms-grid-row-span: 3;
-  grid-row: 17 / 20;
-  background-image: url(/images/Fashion-Height-Increasing-Oxfords-Shoes-Mens-Business-Shoes-Genuine-Leather-Dress-Shoes-Male-Wedding-Shoes-Grow.png);
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-main .categories .categories__items:nth-of-type(8) {
-  -ms-grid-column: 2;
-  grid-column: 2;
-  -ms-grid-row: 17;
-  -ms-grid-row-span: 3;
-  grid-row: 17 / 20;
-  background-image: url(/images/shoes-brown.png);
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-main .categories .categories__items:nth-of-type(9) {
-  -ms-grid-column: 3;
-  grid-column: 3;
-  -ms-grid-row: 17;
-  -ms-grid-row-span: 3;
-  grid-row: 17 / 20;
-  background-image: url(/images/mens-formal-shoes-500x500.png);
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 aside {
   -ms-grid-column: 3;
   grid-column: 3;
@@ -404,10 +208,8 @@ aside .aside {
       grid-template-columns: 1fr;
   justify-items: end;
   padding-right: 15px;
-  height: 900px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+  height: 100%;
+  position: relative;
   background: white;
 }
 
@@ -486,35 +288,4 @@ aside .aside .search__submit {
   -webkit-transition: background 150ms ease-in-out;
   transition: background 150ms ease-in-out;
 }
-
-.categories__items {
-  -webkit-animation: appear 3s;
-          animation: appear 3s;
-}
-
-@-webkit-keyframes appear {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(-50px);
-            transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-}
-
-@keyframes appear {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(-50px);
-            transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-}
-/*# sourceMappingURL=categories.css.map */
+/*# sourceMappingURL=products.css.map */
