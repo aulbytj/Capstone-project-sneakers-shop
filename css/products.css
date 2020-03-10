@@ -3,12 +3,12 @@
           box-sizing: border-box;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (max-width: 767px) {
   .aside {
     display: none;
   }
   body {
-    overflow: hidden;
+    overflow-x: hidden;
     margin: 0;
     font-family: "Roboto Slab", serif;
     display: -ms-grid;
@@ -191,6 +191,433 @@
   header .header__social ul {
     list-style: none;
     line-height: 2.5em;
+  }
+  main {
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 4;
+    grid-row: 2 / 6;
+    bottom: 3em;
+    position: relative;
+    top: 1em;
+  }
+  main .main-content {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 3px;
+    height: auto;
+  }
+  main .content {
+    background-color: #dddfe4;
+  }
+  main .content:nth-of-type(1) {
+    height: 30;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    background-image: url(/images/shirts-n-tie-sets.png);
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+  }
+  main .content:nth-of-type(2) {
+    height: 30vh;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    -ms-grid-column: 2;
+    grid-column: 2;
+  }
+  main .content:nth-of-type(3) {
+    height: 30vh;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    -ms-grid-column: 3;
+    grid-column: 3;
+  }
+  main .content:nth-of-type(4) {
+    height: 10vh;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 2;
+    grid-row: 2;
+    -ms-flex-line-pack: normal;
+        align-content: normal;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .content:nth-of-type(5) {
+    height: 10vh;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
+  main .content:nth-of-type(6) {
+    height: 40vh;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4 / 5;
+    display: -ms-grid;
+    display: grid;
+    padding: 6em;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    text-align: center;
+    font-size: larger;
+  }
+  main .content:nth-of-type(6) p {
+    text-align: center;
+  }
+  main .content:nth-of-type(7) {
+    height: 10vh;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 5;
+    grid-row: 5;
+    display: -ms-grid;
+    display: grid;
+    font-size: xx-large;
+    text-align: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  main .content:nth-of-type(8) {
+    height: 10vh;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 6;
+    grid-row: 6;
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .aside {
+    display: none;
+  }
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    font-family: "Roboto Slab", serif;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  header {
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    height: 8vh;
+  }
+  header .menu {
+    position: absolute;
+    top: 49%;
+    left: 54%;
+    cursor: pointer;
+    display: none;
+  }
+  header .header {
+    display: -ms-grid;
+    display: grid;
+    height: 8vh;
+    position: relative;
+  }
+  header .header .toggle {
+    display: none;
+  }
+  header .header .toggle-label {
+    position: absolute;
+    top: 66%;
+    right: 3%;
+    cursor: pointer;
+  }
+  header .header .toggle-label span,
+  header .header .toggle-label span::before,
+  header .header .toggle-label span::after {
+    display: block;
+    height: 2px;
+    background-color: #b0cbf9;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+  }
+  header .header .toggle-label span::before,
+  header .header .toggle-label span::after {
+    content: "";
+    position: absolute;
+  }
+  header .header .toggle-label span::before {
+    top: 7px;
+    -webkit-transform: scaleX(50%);
+            transform: scaleX(50%);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+  }
+  header .header .toggle-label span::after {
+    left: 2px;
+    top: -7px;
+    -webkit-transform: scaleX(50%);
+            transform: scaleX(50%);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+  header .header .toggle:checked ~ nav a {
+    opacity: 1;
+    -webkit-transition: opacity 250ms ease-in-out 800ms;
+    transition: opacity 250ms ease-in-out 800ms;
+  }
+  header .header .toggle:checked ~ nav {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  header .header nav {
+    -webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
+    -webkit-transition: -webkit-transform 1000ms ease-in-out;
+    transition: -webkit-transform 1000ms ease-in-out;
+    transition: transform 1000ms ease-in-out;
+    transition: transform 1000ms ease-in-out, -webkit-transform 1000ms ease-in-out;
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    background: transparent;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    position: absolute;
+    top: 100%;
+    width: 50vw;
+    height: 450px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 1;
+    margin: 0 -25% 0 25%;
+  }
+  header .header nav .nav-ul {
+    background-color: #b0cbf9;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    position: relative;
+    width: 50vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    list-style: none;
+    height: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: width 300ms ease-in-out;
+    transition: width 300ms ease-in-out;
+    -webkit-box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
+            box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    padding: 0;
+  }
+  header .header nav .nav-ul__items {
+    position: relative;
+  }
+  header .header nav .nav-ul__links {
+    text-decoration: none;
+    color: white;
+    opacity: 0;
+    -webkit-transition: opacity 150ms ease-in-out;
+    transition: opacity 150ms ease-in-out;
+  }
+  header .header nav .nav-ul__links:hover {
+    color: #d1f5f8;
+    -webkit-transition: color 600ms ease-in-out;
+    transition: color 600ms ease-in-out;
+  }
+  header .header nav .nav-ul__links::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: royalblue;
+    -webkit-transition: width 300ms ease-in-out;
+    transition: width 300ms ease-in-out;
+  }
+  header .header nav .nav-ul__links:hover::before {
+    width: 100%;
+  }
+  header .header__brand {
+    position: relative;
+    left: 26px;
+    margin: 0;
+    top: 1em;
+    font-family: "Alfa Slab One", cursive;
+    font-size: 0.625rem;
+    width: -moz-fit-content;
+  }
+  header .header__brand span {
+    color: dimgray;
+    font-weight: 100;
+    position: absolute;
+    top: 27px;
+    left: 6px;
+  }
+  header .header__brand a {
+    color: rgba(0, 0, 0, 0.95);
+  }
+  header .header__social {
+    display: none;
+    -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
+    position: absolute;
+    left: 43px;
+  }
+  header .header__social ul {
+    list-style: none;
+    line-height: 2.5em;
+  }
+  main {
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 4;
+    grid-row: 2 / 6;
+    bottom: 3em;
+    position: relative;
+    top: 1em;
+  }
+  main .main-content {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 3px;
+    height: auto;
+  }
+  main .content {
+    background-color: #dddfe4;
+  }
+  main .content:nth-of-type(1) {
+    height: 30;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    background-image: url(/images/shirts-n-tie-sets.png);
+    background-size: contain;
+    background-position: center;
+    height: 60vh;
+  }
+  main .content:nth-of-type(2) {
+    height: 30vh;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    -ms-grid-column: 2;
+    grid-column: 2;
+  }
+  main .content:nth-of-type(3) {
+    height: 30vh;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    -ms-grid-column: 3;
+    grid-column: 3;
+  }
+  main .content:nth-of-type(4) {
+    height: 10vh;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 2;
+    grid-row: 2;
+    -ms-flex-line-pack: normal;
+        align-content: normal;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .content:nth-of-type(5) {
+    height: 10vh;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
+  main .content:nth-of-type(6) {
+    height: 40vh;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4 / 5;
+    display: -ms-grid;
+    display: grid;
+    padding: 2em;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+  }
+  main .content:nth-of-type(6) p {
+    text-align: left;
+  }
+  main .content:nth-of-type(7) {
+    height: 10vh;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 5;
+    grid-row: 5;
+    width: 30%;
+    display: -ms-grid;
+    display: grid;
+    font-size: xx-large;
+    text-align: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  main .content:nth-of-type(8) {
+    height: 10vh;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 5;
+    grid-row: 5;
+    width: 69%;
+    justify-self: flex-end;
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main .content:nth-of-type(9) {
+    height: 75vh;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-column: 2 / 4;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 4;
+    grid-row: 2 / 6;
   }
 }
 
