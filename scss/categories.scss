@@ -10,455 +10,697 @@ $alfa: 'Alfa Slab One',
 cursive;
 $accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
-body {
-  overflow-x: hidden;
-  margin: 0;
-  font-family: $roboto;
-
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
-}
-
-header {
-  grid-column: 1;
-  grid-row: 1 / 6;
 
 
-  .menu {
-    position: absolute;
-    top: 49%;
-    left: 54%;
-    cursor: pointer;
+@media (min-width: 768px) and (max-width: 1023px) {
+  .aside {
+    display: none;
   }
 
-  .header {
-    display: grid;
-    height: 900px;
-    position: sticky;
-    top: 0em;
+  .categories {
+    display: none;
+  }
 
-    .toggle {
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    font-family: $roboto;
+
+  }
+
+  header {
+    display: flex;
+    position: relative;
+    width: 100%;
+
+
+    .menu {
+      position: absolute;
+      top: 49%;
+      left: 54%;
+      cursor: pointer;
       display: none;
     }
 
-    .toggle-label {
-      position: absolute;
-      top: 50%;
-      right: 62%;
-      cursor: pointer;
+    .header {
+      display: flex;
+      height: 8vh;
+      position: relative;
+      width: 100%;
 
-      span,
-      span::before,
-      span::after {
-        display: block;
-        height: 2px;
-        background-color: $accent;
-        width: 2em;
-        border-radius: 2px;
-        position: relative;
+
+      .toggle {
+        display: none;
       }
 
-      span::before,
-      span::after {
-        content: "";
+      .toggle-label {
         position: absolute;
-      }
+        top: 66%;
+        right: 3%;
+        cursor: pointer;
 
-      span::before {
-        top: 7px;
-        transform: scaleX(50%);
-        transform-origin: right;
-      }
-
-      span::after {
-        left: 2px;
-        top: -7px;
-        transform: scaleX(50%);
-        transform-origin: left;
-      }
-    }
-
-    .toggle:checked~nav a {
-      opacity: 1;
-      transition: opacity 250ms ease-in-out 800ms;
-    }
-
-    .toggle:checked~nav {
-      transform: scale(1, 1);
-    }
-
-    nav {
-      transform: scale(0, 1);
-      transition: transform 1000ms ease-in-out;
-      transform-origin: left;
-      background: transparent;
-      align-self: center;
-      position: absolute;
-      left: 100%;
-      width: 100vw;
-      height: 450px;
-      align-items: center;
-
-
-      .nav-ul {
-        background-color: $accent;
-        justify-content: space-around;
-        position: relative;
-        width: 75vw;
-        display: flex;
-        list-style: none;
-        height: 100%;
-        align-items: center;
-        transition: width 300ms ease-in-out;
-        box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
-        border-radius: 5px;
-
-        &__items {
+        span,
+        span::before,
+        span::after {
+          display: block;
+          height: 2px;
+          background-color: $accent;
+          width: 2em;
+          border-radius: 2px;
           position: relative;
         }
 
-        &__links {
-          text-decoration: none;
-          color: rgba(100%, 100%, 100%, 1);
-          opacity: 0;
-          transition: opacity 150ms ease-in-out;
-        }
-
-        &__links:hover {
-          color: rgb(209, 245, 248);
-          transition: color 600ms ease-in-out;
-        }
-
-        &__links::before {
-          content: '';
+        span::before,
+        span::after {
+          content: "";
           position: absolute;
-          top: 0;
-          left: 0;
-          width: 0;
-          height: 2px;
-          background-color: royalblue;
+        }
+
+        span::before {
+          top: 7px;
+          transform: scaleX(50%);
+          transform-origin: right;
+        }
+
+        span::after {
+          left: 2px;
+          top: -7px;
+          transform: scaleX(50%);
+          transform-origin: left;
+        }
+      }
+
+      .toggle:checked~nav a {
+        opacity: 1;
+        transition: opacity 250ms ease-in-out 800ms;
+      }
+
+      .toggle:checked~nav {
+        transform: scale(1, 1);
+      }
+
+      nav {
+        transform: scale(1, 0);
+        transition: transform 1000ms ease-in-out;
+        transform-origin: top;
+        background: transparent;
+        align-self: center;
+        position: absolute;
+        top: 100%;
+        width: 50vw;
+        height: 450px;
+        align-items: center;
+        z-index: 1;
+        margin: 0 -25% 0 25%;
+
+
+        .nav-ul {
+          background-color: $accent;
+          justify-content: space-around;
+          position: relative;
+          width: 50vw;
+          display: flex;
+          flex-direction: column;
+          list-style: none;
+          height: 100%;
+          align-items: center;
           transition: width 300ms ease-in-out;
-        }
-
-        &__links:hover::before {
-          width: 100%;
-        }
-      }
-    }
-
-    &__brand {
-      position: relative;
-      left: -11px;
-      margin: 0;
-      top: 1em;
-      font-family: $alfa;
-      font-size: 0.625rem;
-      text-align: center;
-
-
-      span {
-        color: rgba(41.2%, 41.2%, 41.2%, 1);
-        font-weight: 100;
-        position: absolute;
-        top: 25px;
-        left: 87px;
-      }
-    }
-
-    &__brand a {
-      color: rgba($color: #000000, $alpha: 0.95);
-    }
-
-    &__social {
-      align-self: end;
-      position: absolute;
-      left: 43px;
-
-      ul {
-        list-style: none;
-        line-height: 2.5em;
-      }
-    }
-
-  }
-
-}
-
-main {
-  grid-column: 2;
-  grid-row: 1 / 6;
-
-
-
-  .categories {
-    // grid-area: main;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1 / auto;
-    grid-gap: 2px;
-    height: auto;
-    // background-color: #dddfe4;
-
-
-
-
-    // display: flex;
-    // flex-flow: row wrap;
-    // height: 100vh;
-
-
-    .categories__items {
-      // width: calc(100% / 3);
-      height: 50vh;
-      background-color: rgb(235, 232, 232);
-
-    }
-
-    .wallpaper {
-      grid-column: 1 / span 3;
-      grid-row: 12 / 15;
-      background-image: url(/images/background.jpg);
-      background-size: 100% auto;
-      background-position: center;
-      height: 600px;
-    }
-
-
-
-
-    .title__suits {
-      grid-column: 1 / span 3;
-      grid-row: 1;
-      font-size: 2.25rem;
-      top: 16px;
-      margin: 0;
-      text-shadow: 2px 2px 1px $accent;
-      font-family: $alfa;
-    }
-
-    .title__ties {
-      grid-column: 1 / span 3;
-      grid-row: 6;
-      font-size: 2.25rem;
-
-      top: 16px;
-
-      margin: 0;
-      text-shadow: 2px 2px 1px $accent;
-      font-family: $alfa;
-    }
-
-    .title__shoes {
-      grid-column: 1 / span 3;
-      grid-row: 16;
-      font-size: 2.25rem;
-
-      top: 16px;
-
-      margin: 0;
-      text-shadow: 2px 2px 1px $accent;
-      font-family: $alfa;
-    }
-
-
-
-
-    .categories__items:nth-of-type(1) {
-      grid-column: 1;
-      grid-row: 2 / 6;
-      background-image: url(/images/suit-burgundy.png);
-      background-size: 100% auto;
-      background-position: center;
-      background-repeat: no-repeat;
-
-    }
-
-    .categories__items:nth-of-type(2) {
-      grid-column: 2;
-      grid-row: 2 / 6;
-
-      background-image: url(/images/suit-jacket-blue-2.png);
-      background-size: 100% auto;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .categories__items:nth-of-type(3) {
-      grid-column: 3;
-      grid-row: 2 / 6;
-      background-image: url(/images/suit-jacket-red.png);
-      background-size: 100% auto;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .categories__items:nth-of-type(4) {
-      grid-column: 1;
-      grid-row: 7 / 10;
-
-      background-image: url(/images/blue-gold-tie.png);
-      background-size: 100% auto;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .categories__items:nth-of-type(5) {
-      grid-column: 2;
-      grid-row: 7 / 10;
-      background-image: url(/images/red-dot-blue-tie.png);
-      background-size: 100% auto;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .categories__items:nth-of-type(6) {
-      grid-column: 3;
-      grid-row: 7 / 10;
-      background-image: url(/images/suit-burgundy.png);
-      background-size: 100% auto;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .categories__items:nth-of-type(7) {
-      grid-column: 1;
-      grid-row: 17 / 20;
-      background-image: url(/images/Fashion-Height-Increasing-Oxfords-Shoes-Mens-Business-Shoes-Genuine-Leather-Dress-Shoes-Male-Wedding-Shoes-Grow.png);
-      background-size: 100% auto;
-      background-position: center;
-      background-repeat: no-repeat;
-
-    }
-
-    .categories__items:nth-of-type(8) {
-      grid-column: 2;
-      grid-row: 17 / 20;
-      background-image: url(/images/shoes-brown.png);
-      background-size: 100% auto;
-      background-position: center;
-      background-repeat: no-repeat;
-
-    }
-
-    .categories__items:nth-of-type(9) {
-      grid-column: 3;
-      grid-row: 17 / 20;
-      background-image: url(/images/mens-formal-shoes-500x500.png);
-      background-size: 100% auto;
-      background-position: center;
-      background-repeat: no-repeat;
-
-    }
-  }
-}
-
-
-aside {
-  // grid-area: aside;
-  grid-column: 3;
-  grid-row: 1 / 6;
-
-  .aside {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: end;
-    padding-right: 15px;
-    height: 900px;
-    position: sticky;
-    top: 0;
-    background: white;
-
-    p {
-      margin: 0;
-      position: relative;
-      top: 57px;
-    }
-
-
-    .search {
-      $size: 40px;
-      border: 2px solid rgba(19.9%, 46.9%, 92.9%, 1);
-      display: flex;
-      width: 220px;
-      border-radius: 50px;
-      height: $size;
-      width: $size; // shrinks the size of the search area 
-      padding: 3px;
-      position: relative;
-      transition: width 300ms cubic-bezier(.22, .21, .27, 1.25);
-      overflow: hidden;
-
-
-
-      &__input {
-        flex-grow: 1; // allows the input to take up the entire width 
-        font-size: 1rem;
-        // width: 180px;
-        padding: 0 0.1em;
-        border: none;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        line-height: $size - 5px;
-        opacity: 0;
-        cursor: pointer;
-
-        &:focus {
-          outline: 0;
-        }
-      }
-
-      &:focus-within {
-        width: 100%;
-
-        .search__input {
-          opacity: 1;
-          cursor: initial;
-        }
-
-        .search__submit {
-          background: $accent;
-          color: rgba(100%, 100%, 100%, 1);
-
-          &:focus,
-          &:hover {
-            outline: 0;
-            box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.35);
+          box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
+          border-radius: 5px;
+          padding: 0;
+
+          &__items {
+            position: relative;
+          }
+
+          &__links {
+            text-decoration: none;
+            color: rgba(100%, 100%, 100%, 1);
+            opacity: 0;
+            transition: opacity 150ms ease-in-out;
+          }
+
+          &__links:hover {
+            color: rgb(209, 245, 248);
+            transition: color 600ms ease-in-out;
+          }
+
+          &__links::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: royalblue;
+            transition: width 300ms ease-in-out;
+          }
+
+          &__links:hover::before {
+            width: 100%;
           }
         }
       }
 
-      &__submit {
-        cursor: pointer;
-        font-size: 1rem;
-        border: 0;
-        border-radius: 100%;
-        background: transparent;
-        height: $size - 10px;
-        width: $size - 10px;
-        color: $accent;
-        margin-left: auto;
-        transition: background 150ms ease-in-out;
+      &__brand {
+        position: relative;
+        left: 26px;
+        margin: 0;
+        top: 1em;
+        font-family: $alfa;
+        font-size: 0.625rem;
+        width: -moz-fit-content;
+
+
+
+
+
+        span {
+          color: rgba(41.2%, 41.2%, 41.2%, 1);
+          font-weight: 100;
+          position: absolute;
+          top: 27px;
+          left: 6px;
+        }
       }
 
+
+
+      &__brand a {
+        color: rgba($color: #000000, $alpha: 0.95);
+      }
+
+      &__social {
+        display: none;
+        align-self: end;
+        position: absolute;
+        left: 43px;
+
+        ul {
+          list-style: none;
+          line-height: 2.5em;
+        }
+      }
+
+    }
+
+  }
+
+  .categories__tab {
+    display: flex;
+    flex-direction: column;
+    background: rgb(235, 232, 232);
+  }
+
+  .content {
+   display: grid;
+   grid-template-columns: 10% 1fr 1fr 1fr;
+   box-shadow: inset 0 0 5px black;
+  }
+
+  .tab-categories__items {
+    width: 200px;
+  }
+
+  img {
+    width: 300px;
+    padding: 5px;
+  }
+
+  .tab-title {
+    padding: 30px;
+    text-shadow: 2px 2px 1px $accent;
+        font-family: $alfa;
+  }
+
+  .tab-categories__items {
+    animation: appear 3s;
+  }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate(0);
     }
   }
 }
 
-.categories__items {
-  animation: appear 3s;
-}
 
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
+
+
+
+@media (min-width: 1024px) {
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    font-family: $roboto;
+
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
   }
 
-  to {
-    opacity: 1;
-    transform: translate(0);
+
+  .categories-tab {
+    display: none;
+  }
+
+  header {
+    grid-column: 1;
+    grid-row: 1 / 6;
+
+
+    .menu {
+      position: absolute;
+      top: 49%;
+      left: 54%;
+      cursor: pointer;
+    }
+
+    .header {
+      display: grid;
+      height: 900px;
+      position: sticky;
+      top: 0em;
+
+      .toggle {
+        display: none;
+      }
+
+      .toggle-label {
+        position: absolute;
+        top: 50%;
+        right: 62%;
+        cursor: pointer;
+
+        span,
+        span::before,
+        span::after {
+          display: block;
+          height: 2px;
+          background-color: $accent;
+          width: 2em;
+          border-radius: 2px;
+          position: relative;
+        }
+
+        span::before,
+        span::after {
+          content: "";
+          position: absolute;
+        }
+
+        span::before {
+          top: 7px;
+          transform: scaleX(50%);
+          transform-origin: right;
+        }
+
+        span::after {
+          left: 2px;
+          top: -7px;
+          transform: scaleX(50%);
+          transform-origin: left;
+        }
+      }
+
+      .toggle:checked~nav a {
+        opacity: 1;
+        transition: opacity 250ms ease-in-out 800ms;
+      }
+
+      .toggle:checked~nav {
+        transform: scale(1, 1);
+      }
+
+      nav {
+        transform: scale(0, 1);
+        transition: transform 1000ms ease-in-out;
+        transform-origin: left;
+        background: transparent;
+        align-self: center;
+        position: absolute;
+        left: 100%;
+        width: 100vw;
+        height: 450px;
+        align-items: center;
+
+
+        .nav-ul {
+          background-color: $accent;
+          justify-content: space-around;
+          position: relative;
+          width: 75vw;
+          display: flex;
+          list-style: none;
+          height: 100%;
+          align-items: center;
+          transition: width 300ms ease-in-out;
+          box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
+          border-radius: 5px;
+
+          &__items {
+            position: relative;
+          }
+
+          &__links {
+            text-decoration: none;
+            color: rgba(100%, 100%, 100%, 1);
+            opacity: 0;
+            transition: opacity 150ms ease-in-out;
+          }
+
+          &__links:hover {
+            color: rgb(209, 245, 248);
+            transition: color 600ms ease-in-out;
+          }
+
+          &__links::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: royalblue;
+            transition: width 300ms ease-in-out;
+          }
+
+          &__links:hover::before {
+            width: 100%;
+          }
+        }
+      }
+
+      &__brand {
+        position: relative;
+        left: -11px;
+        margin: 0;
+        top: 1em;
+        font-family: $alfa;
+        font-size: 0.625rem;
+        text-align: center;
+
+
+        span {
+          color: rgba(41.2%, 41.2%, 41.2%, 1);
+          font-weight: 100;
+          position: absolute;
+          top: 25px;
+          left: 87px;
+        }
+      }
+
+      &__brand a {
+        color: rgba($color: #000000, $alpha: 0.95);
+      }
+
+      &__social {
+        align-self: end;
+        position: absolute;
+        left: 43px;
+
+        ul {
+          list-style: none;
+          line-height: 2.5em;
+        }
+      }
+
+    }
+
+  }
+
+  main {
+    grid-column: 2;
+    grid-row: 1 / 6;
+
+
+
+    .categories {
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1 / auto;
+      grid-gap: 2px;
+      height: auto;
+
+
+      .categories__items {
+
+        height: 50vh;
+        background-color: rgb(235, 232, 232);
+
+      }
+
+      .wallpaper {
+        grid-column: 1 / span 3;
+        grid-row: 12 / 15;
+        background-image: url(/images/background.jpg);
+        background-size: 100% auto;
+        background-position: center;
+        height: 600px;
+      }
+
+
+
+
+      .title__suits {
+        grid-column: 1 / span 3;
+        grid-row: 1;
+        font-size: 2.25rem;
+        top: 16px;
+        margin: 0;
+        text-shadow: 2px 2px 1px $accent;
+        font-family: $alfa;
+      }
+
+      .title__ties {
+        grid-column: 1 / span 3;
+        grid-row: 6;
+        font-size: 2.25rem;
+
+        top: 16px;
+
+        margin: 0;
+        text-shadow: 2px 2px 1px $accent;
+        font-family: $alfa;
+      }
+
+      .title__shoes {
+        grid-column: 1 / span 3;
+        grid-row: 16;
+        font-size: 2.25rem;
+
+        top: 16px;
+
+        margin: 0;
+        text-shadow: 2px 2px 1px $accent;
+        font-family: $alfa;
+      }
+
+
+
+
+      .categories__items:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 2 / 6;
+        background-image: url(/images/suit-burgundy.png);
+        background-size: 100% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+
+      }
+
+      .categories__items:nth-of-type(2) {
+        grid-column: 2;
+        grid-row: 2 / 6;
+
+        background-image: url(/images/suit-jacket-blue-2.png);
+        background-size: 100% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .categories__items:nth-of-type(3) {
+        grid-column: 3;
+        grid-row: 2 / 6;
+        background-image: url(/images/suit-jacket-red.png);
+        background-size: 100% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .categories__items:nth-of-type(4) {
+        grid-column: 1;
+        grid-row: 7 / 10;
+
+        background-image: url(/images/blue-gold-tie.png);
+        background-size: 100% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .categories__items:nth-of-type(5) {
+        grid-column: 2;
+        grid-row: 7 / 10;
+        background-image: url(/images/red-dot-blue-tie.png);
+        background-size: 100% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .categories__items:nth-of-type(6) {
+        grid-column: 3;
+        grid-row: 7 / 10;
+        background-image: url(/images/suit-burgundy.png);
+        background-size: 100% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .categories__items:nth-of-type(7) {
+        grid-column: 1;
+        grid-row: 17 / 20;
+        background-image: url(/images/Fashion-Height-Increasing-Oxfords-Shoes-Mens-Business-Shoes-Genuine-Leather-Dress-Shoes-Male-Wedding-Shoes-Grow.png);
+        background-size: 100% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+
+      }
+
+      .categories__items:nth-of-type(8) {
+        grid-column: 2;
+        grid-row: 17 / 20;
+        background-image: url(/images/shoes-brown.png);
+        background-size: 100% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+
+      }
+
+      .categories__items:nth-of-type(9) {
+        grid-column: 3;
+        grid-row: 17 / 20;
+        background-image: url(/images/mens-formal-shoes-500x500.png);
+        background-size: 100% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+
+      }
+    }
+  }
+
+
+  aside {
+    // grid-area: aside;
+    grid-column: 3;
+    grid-row: 1 / 6;
+
+    .aside {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: end;
+      padding-right: 15px;
+      height: 900px;
+      position: sticky;
+      top: 0;
+      background: white;
+
+      p {
+        margin: 0;
+        position: relative;
+        top: 57px;
+      }
+
+
+      .search {
+        $size: 40px;
+        border: 2px solid rgba(19.9%, 46.9%, 92.9%, 1);
+        display: flex;
+        width: 220px;
+        border-radius: 50px;
+        height: $size;
+        width: $size; // shrinks the size of the search area 
+        padding: 3px;
+        position: relative;
+        transition: width 300ms cubic-bezier(.22, .21, .27, 1.25);
+        overflow: hidden;
+
+
+
+        &__input {
+          flex-grow: 1; // allows the input to take up the entire width 
+          font-size: 1rem;
+          // width: 180px;
+          padding: 0 0.1em;
+          border: none;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          line-height: $size - 5px;
+          opacity: 0;
+          cursor: pointer;
+
+          &:focus {
+            outline: 0;
+          }
+        }
+
+        &:focus-within {
+          width: 100%;
+
+          .search__input {
+            opacity: 1;
+            cursor: initial;
+          }
+
+          .search__submit {
+            background: $accent;
+            color: rgba(100%, 100%, 100%, 1);
+
+            &:focus,
+            &:hover {
+              outline: 0;
+              box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.35);
+            }
+          }
+        }
+
+        &__submit {
+          cursor: pointer;
+          font-size: 1rem;
+          border: 0;
+          border-radius: 100%;
+          background: transparent;
+          height: $size - 10px;
+          width: $size - 10px;
+          color: $accent;
+          margin-left: auto;
+          transition: background 150ms ease-in-out;
+        }
+
+      }
+    }
+  }
+
+  .categories__items {
+    animation: appear 3s;
+  }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate(0);
+    }
   }
 }
