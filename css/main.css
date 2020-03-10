@@ -33,6 +33,13 @@ header {
   grid-area: header;
 }
 
+header .menu {
+  position: absolute;
+  top: 49%;
+  left: 54%;
+  cursor: pointer;
+}
+
 header .header {
   display: -ms-grid;
   display: grid;
@@ -40,12 +47,74 @@ header .header {
   position: relative;
 }
 
+header .header .toggle {
+  display: none;
+}
+
+header .header .toggle-label {
+  position: absolute;
+  top: 50%;
+  right: 62%;
+  cursor: pointer;
+}
+
+header .header .toggle-label span,
+header .header .toggle-label span::before,
+header .header .toggle-label span::after {
+  display: block;
+  height: 2px;
+  background-color: #b0cbf9;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+header .header .toggle-label span::before,
+header .header .toggle-label span::after {
+  content: "";
+  position: absolute;
+}
+
+header .header .toggle-label span::before {
+  top: 7px;
+  -webkit-transform: scaleX(50%);
+          transform: scaleX(50%);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+}
+
+header .header .toggle-label span::after {
+  left: 2px;
+  top: -7px;
+  -webkit-transform: scaleX(50%);
+          transform: scaleX(50%);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+header .header .toggle:checked ~ nav a {
+  opacity: 1;
+  -webkit-transition: opacity 250ms ease-in-out 800ms;
+  transition: opacity 250ms ease-in-out 800ms;
+}
+
+header .header .toggle:checked ~ nav {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
 header .header nav {
-  opacity: 0;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transition: -webkit-transform 1000ms ease-in-out;
+  transition: -webkit-transform 1000ms ease-in-out;
+  transition: transform 1000ms ease-in-out;
+  transition: transform 1000ms ease-in-out, -webkit-transform 1000ms ease-in-out;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  background: transparent;
   -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
       align-self: center;
   position: absolute;
   left: 100%;
@@ -54,9 +123,6 @@ header .header nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: antiquewhite;
-  -webkit-box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
-          box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
 }
 
 header .header nav .nav-ul {
@@ -75,6 +141,9 @@ header .header nav .nav-ul {
           align-items: center;
   -webkit-transition: width 300ms ease-in-out;
   transition: width 300ms ease-in-out;
+  -webkit-box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
+          box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
 }
 
 header .header nav .nav-ul__items {
@@ -84,6 +153,15 @@ header .header nav .nav-ul__items {
 header .header nav .nav-ul__links {
   text-decoration: none;
   color: white;
+  opacity: 0;
+  -webkit-transition: opacity 150ms ease-in-out;
+  transition: opacity 150ms ease-in-out;
+}
+
+header .header nav .nav-ul__links:hover {
+  color: #d1f5f8;
+  -webkit-transition: color 600ms ease-in-out;
+  transition: color 600ms ease-in-out;
 }
 
 header .header nav .nav-ul__links::before {
@@ -103,15 +181,33 @@ header .header nav .nav-ul__links:hover::before {
 }
 
 header .header__brand {
-  font-family: "Monoton", cursive;
-  font-size: 1.2rem;
+  position: relative;
+  left: -11px;
+  margin: 0;
+  top: 1em;
+  font-family: "Alfa Slab One", cursive;
+  font-size: 0.625rem;
   text-align: center;
+}
+
+header .header__brand span {
+  color: dimgray;
+  font-weight: 100;
+  position: absolute;
+  top: 25px;
+  left: 87px;
+}
+
+header .header__brand a {
+  color: rgba(0, 0, 0, 0.95);
 }
 
 header .header__social {
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
+  position: absolute;
+  left: 43px;
 }
 
 header .header__social ul {
@@ -143,6 +239,29 @@ main.main {
   background-image: url(/images/side.jpg);
   background-size: cover;
   background-position: center;
+}
+
+.side__bottom {
+  position: relative;
+  z-index: -1;
+}
+
+.side__bottom h1 {
+  font-family: "Monoton", cursive;
+  font-size: 3.2em;
+  margin: 0;
+  line-height: 1em;
+  position: absolute;
+  top: 1em;
+  left: 10%;
+  text-shadow: 2px 2px 2px bisque;
+  z-index: -1;
+}
+
+.side__bottom p {
+  position: absolute;
+  top: 24em;
+  left: 5em;
 }
 
 aside {
@@ -242,19 +361,23 @@ aside .aside .search__submit {
   transition: background 150ms ease-in-out;
 }
 
-.fade-up {
-  -webkit-animation: appear 5s;
-          animation: appear 5s;
+aside .aside__category ul {
+  list-style: none;
 }
 
-.fade-slide {
-  -webkit-animation: slide 5s;
-          animation: slide 5s;
+.fade-up {
+  -webkit-animation: appear 3s;
+          animation: appear 3s;
+}
+
+.fade-slide-right {
+  -webkit-animation: slide-right 3s;
+          animation: slide-right 3s;
 }
 
 .fade-in {
-  -webkit-animation: show 5s;
-          animation: show 5s;
+  -webkit-animation: show 6s;
+          animation: show 6s;
 }
 
 @-webkit-keyframes appear {
@@ -283,7 +406,7 @@ aside .aside .search__submit {
   }
 }
 
-@-webkit-keyframes slide {
+@-webkit-keyframes slide-right {
   from {
     opacity: 0;
     -webkit-transform: translateX(100px);
@@ -296,7 +419,7 @@ aside .aside .search__submit {
   }
 }
 
-@keyframes slide {
+@keyframes slide-right {
   from {
     opacity: 0;
     -webkit-transform: translateX(100px);

@@ -2,9 +2,12 @@
   box-sizing: border-box;
 }
 
-$roboto: 'Roboto Slab', serif;
-$monoton: 'Monoton', cursive;
-$alfa: 'Alfa Slab One', cursive;
+$roboto: 'Roboto Slab',
+serif;
+$monoton: 'Monoton',
+cursive;
+$alfa: 'Alfa Slab One',
+cursive;
 $accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
 body {
@@ -18,10 +21,10 @@ body {
   display: grid;
   grid-template-columns: 260px 2fr 2fr 260px;
   grid-template-areas:
-  "header main side aside"
-  "header main side aside"
-  "header main side aside"
-  "header main side aside";
+    "header main side aside"
+    "header main side aside"
+    "header main side aside"
+    "header main side aside";
   height: 100vh;
 }
 
@@ -34,23 +37,80 @@ body {
 header {
   grid-area: header;
 
+  .menu {
+    position: absolute;
+    top: 49%;
+    left: 54%;
+    cursor: pointer;
+  }
+
   .header {
     display: grid;
     height: 100%;
     position: relative;
-    
+
+    .toggle {
+      display: none;
+    }
+
+    .toggle-label {
+      position: absolute;
+      top: 50%;
+      right: 62%;
+      cursor: pointer;
+
+      span,
+      span::before,
+      span::after {
+        display: block;
+        height: 2px;
+        background-color: $accent;
+        width: 2em;
+        border-radius: 2px;
+        position: relative;
+      }
+
+      span::before,
+      span::after {
+        content: "";
+        position: absolute;
+      }
+
+      span::before {
+        top: 7px;
+        transform: scaleX(50%);
+        transform-origin: right;
+      }
+
+      span::after {
+        left: 2px;
+        top: -7px;
+        transform: scaleX(50%);
+        transform-origin: left;
+      }
+    }
+
+    .toggle:checked~nav a {
+      opacity: 1;
+      transition: opacity 250ms ease-in-out 800ms;
+    }
+
+    .toggle:checked~nav {
+      transform: scale(1, 1);
+    }
 
     nav {
-      opacity: 0;
-      display: inline-flex;
+      transform: scale(0, 1);
+      transition: transform 1000ms ease-in-out;
+      transform-origin: left;
+      background: transparent;
       align-self: center;
       position: absolute;
       left: 100%;
       width: 100vw;
       height: 450px;
       align-items: center;
-      background: antiquewhite;
-      box-shadow: 8px 4px 19px -4px rgba(0,0,0,0.75);
+
 
       .nav-ul {
         background-color: $accent;
@@ -62,6 +122,8 @@ header {
         height: 100%;
         align-items: center;
         transition: width 300ms ease-in-out;
+        box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
+        border-radius: 5px;
 
         &__items {
           position: relative;
@@ -70,6 +132,13 @@ header {
         &__links {
           text-decoration: none;
           color: rgba(100%, 100%, 100%, 1);
+          opacity: 0;
+          transition: opacity 150ms ease-in-out;
+        }
+
+        &__links:hover {
+          color: rgb(209, 245, 248);
+          transition: color 600ms ease-in-out;
         }
 
         &__links::before {
@@ -80,9 +149,7 @@ header {
           width: 0;
           height: 2px;
           background-color: royalblue;
-
           transition: width 300ms ease-in-out;
-          
         }
 
         &__links:hover::before {
@@ -92,13 +159,32 @@ header {
     }
 
     &__brand {
-      font-family: $monoton;
-      font-size: 1.2rem;
+      position: relative;
+      left: -11px;
+      margin: 0;
+      top: 1em;
+      font-family: $alfa;
+      font-size: 0.625rem;
       text-align: center;
+
+
+      span {
+        color: rgba(41.2%, 41.2%, 41.2%, 1);
+        font-weight: 100;
+        position: absolute;
+        top: 25px;
+        left: 87px;
+      }
+    }
+
+    &__brand a {
+      color: rgba($color: #000000, $alpha: 0.95);
     }
 
     &__social {
       align-self: end;
+      position: absolute;
+      left: 43px;
 
       ul {
         list-style: none;
@@ -107,7 +193,7 @@ header {
     }
 
   }
- 
+
 }
 
 main {
@@ -128,7 +214,34 @@ main {
     background-size: cover;
     background-position: center;
   }
+
+  &__bottom {
+    position: relative;
+    z-index: -1;
+  }
+
+  &__bottom h1 {
+    font-family: $monoton;
+    font-size: 3.2em;
+    margin: 0;
+    line-height: 1em;
+    position: absolute;
+    top: 1em;
+    left: 10%;
+    text-shadow: 2px 2px 2px bisque;
+    z-index: -1;
+
+  }
+
+  &__bottom p {
+    position: absolute;
+    top: 24em;
+    left: 5em;
+  }
+
 }
+
+
 
 aside {
   grid-area: aside;
@@ -141,13 +254,13 @@ aside {
     height: 100%;
     position: relative;
     background: white;
-    
+
     p {
       margin: 0;
       position: relative;
       top: 57px;
     }
-  
+
 
     .search {
       $size: 40px;
@@ -156,16 +269,18 @@ aside {
       width: 220px;
       border-radius: 50px;
       height: $size;
-      width: $size; /* shrinks the size of the search area */
+      width: $size;
+      /* shrinks the size of the search area */
       padding: 3px;
       position: relative;
-      transition: width 300ms cubic-bezier(.22,.21,.27,1.25);
+      transition: width 300ms cubic-bezier(.22, .21, .27, 1.25);
       overflow: hidden;
 
-    
+
 
       &__input {
-        flex-grow: 1; /* allows the input to take up the entire width */
+        flex-grow: 1;
+        /* allows the input to take up the entire width */
         font-size: 1rem;
         // width: 180px;
         padding: 0 0.1em;
@@ -186,7 +301,7 @@ aside {
       &:focus-within {
         width: 100%;
 
-        .search__input{ 
+        .search__input {
           opacity: 1;
           cursor: initial;
         }
@@ -217,19 +332,23 @@ aside {
       }
 
     }
+
+    &__category ul {
+      list-style: none;
+    }
   }
 }
 
 .fade-up {
-  animation: appear 5s;
+  animation: appear 3s;
 }
 
-.fade-slide {
-  animation: slide 5s;
+.fade-slide-right {
+  animation: slide-right 3s;
 }
 
 .fade-in {
-  animation: show 5s;
+  animation: show 6s;
 }
 
 @keyframes appear {
@@ -244,16 +363,16 @@ aside {
   }
 }
 
- @keyframes slide {
-    from {
-      opacity: 0;
-      transform: translateX(100px);
-    }
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
 
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes show {
