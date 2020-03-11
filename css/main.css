@@ -527,6 +527,7 @@
   }
 
   .side {
+    grid-area: side;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr;
@@ -734,13 +735,6 @@
     background-image: url(/images/hero.jpg);
     background-size: cover;
     background-position: center;
-  }
-
-  .side {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 4;
-    -ms-grid-column: 3;
-    grid-area: side;
   }
 
   .side__top {
