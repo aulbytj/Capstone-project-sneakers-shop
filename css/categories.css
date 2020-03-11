@@ -758,7 +758,7 @@
   main .categories {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)3;
+    -ms-grid-columns: (1fr) 3;
     grid-template-columns: repeat(3, 1fr);
     -ms-grid-rows: 1 / auto;
     grid-template-rows: 1 / auto;
@@ -969,7 +969,6 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 220px;
     border-radius: 50px;
     height: 40px;
     width: 40px;
