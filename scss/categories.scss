@@ -1,14 +1,19 @@
 * {
   box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-$roboto: 'Roboto Slab',
-serif;
-$monoton: 'Monoton',
-cursive;
-$alfa: 'Alfa Slab One',
-cursive;
-$accent: rgba(68.9%, 79.5%, 97.6%, 1);
+$ul-bg: #f5f5f5;
+$linkAtHoverAnimation: rgba(106, 107, 107, 1);
+$black: rgba(0, 0, 0, 0.75);
+
+$ff-h: Helvetica,
+Arial,
+sans-serif;
+
+.aside__category {
+  display: none;
+}
 
 @media (max-width: 767px) {
   .aside {
@@ -22,14 +27,14 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
   body {
     overflow-x: hidden;
     margin: 0;
-    font-family: $roboto;
+    font-family: Helvetica, Arial, sans-serif;
   }
 
   header {
     display: flex;
     position: flex;
     width: 100%;
-    background: rgb(235, 232, 232);
+    background: rgba(100%, 100%, 100%, 1);
 
     .menu {
       position: absolute;
@@ -51,7 +56,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
       .toggle-label {
         position: absolute;
-        top: 66%;
+        top: 41%;
         right: 3%;
         cursor: pointer;
 
@@ -60,7 +65,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         span::after {
           display: block;
           height: 2px;
-          background-color: $accent;
+          background-color: $black;
           width: 2em;
           border-radius: 2px;
           position: relative;
@@ -110,7 +115,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         margin: 0 -25% 0 25%;
 
         .nav-ul {
-          background-color: $accent;
+          background-color: $ul-bg;
           justify-content: space-around;
           position: relative;
           width: 50vw;
@@ -120,7 +125,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           height: 100%;
           align-items: center;
           transition: width 300ms ease-in-out;
-          box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
+          box-shadow: 8px 4px 19px -4px $black;
           border-radius: 5px;
           padding: 0;
 
@@ -130,13 +135,13 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
           &__links {
             text-decoration: none;
-            color: rgba(100%, 100%, 100%, 1);
+            color: $black;
             opacity: 0;
             transition: opacity 150ms ease-in-out;
           }
 
           &__links:hover {
-            color: rgb(209, 245, 248);
+            color: $linkAtHoverAnimation;
             transition: color 600ms ease-in-out;
           }
 
@@ -162,17 +167,8 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         left: 26px;
         margin: 0;
         top: 1em;
-        font-family: $alfa;
         font-size: 0.625rem;
         width: -moz-fit-content;
-
-        span {
-          color: rgba(41.2%, 41.2%, 41.2%, 1);
-          font-weight: 100;
-          position: absolute;
-          top: 27px;
-          left: 6px;
-        }
       }
 
       &__brand a {
@@ -196,7 +192,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
   }
 
   .categories__tab {
-    background: rgb(235, 232, 232);
+    background: $ul-bg;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -214,14 +210,31 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
   .tab-title {
     padding: 30px;
-    text-shadow: 2px 2px 1px $accent;
-    font-family: $alfa;
+    text-shadow: 2px 2px 1px;
     font-size: xx-large;
+    position: sticky;
+    top: 0;
   }
 
   img {
     height: auto;
     width: 100%;
+  }
+
+  .thanks {
+    width: 100%;
+    background: $ul-bg;
+    padding: 1em;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+    h2 {
+      line-height: 3em;
+      font-size: 3em;
+      text-transform: uppercase;
+    }
   }
 
 }
@@ -239,7 +252,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
   body {
     overflow-x: hidden;
     margin: 0;
-    font-family: $roboto;
+    font-family: Helvetica, Arial, sans-serif;
   }
 
   header {
@@ -261,13 +274,23 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       position: relative;
       width: 100%;
 
+      .header__brand h1 {
+
+
+        .art::before {
+          content: '|';
+          color: $ul-bg;
+        }
+
+      }
+
       .toggle {
         display: none;
       }
 
       .toggle-label {
         position: absolute;
-        top: 66%;
+        top: 38%;
         right: 3%;
         cursor: pointer;
 
@@ -276,7 +299,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         span::after {
           display: block;
           height: 2px;
-          background-color: $accent;
+          background-color: $black;
           width: 2em;
           border-radius: 2px;
           position: relative;
@@ -327,7 +350,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
 
         .nav-ul {
-          background-color: $accent;
+          background-color: $ul-bg;
           justify-content: space-around;
           position: relative;
           width: 50vw;
@@ -337,7 +360,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           height: 100%;
           align-items: center;
           transition: width 300ms ease-in-out;
-          box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
+          box-shadow: 8px 4px 19px -4px $black;
           border-radius: 5px;
           padding: 0;
 
@@ -347,13 +370,13 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
           &__links {
             text-decoration: none;
-            color: rgba(100%, 100%, 100%, 1);
+            color: $black;
             opacity: 0;
             transition: opacity 150ms ease-in-out;
           }
 
           &__links:hover {
-            color: rgb(209, 245, 248);
+            color: $linkAtHoverAnimation;
             transition: color 600ms ease-in-out;
           }
 
@@ -379,17 +402,8 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         left: 26px;
         margin: 0;
         top: 1em;
-        font-family: $alfa;
         font-size: 0.625rem;
         width: -moz-fit-content;
-
-        span {
-          color: rgba(41.2%, 41.2%, 41.2%, 1);
-          font-weight: 100;
-          position: absolute;
-          top: 27px;
-          left: 6px;
-        }
       }
 
       &__brand a {
@@ -412,34 +426,59 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
   }
 
+
   .categories__tab {
-    display: flex;
-    flex-direction: column;
-    background: rgb(235, 232, 232);
+    display: grid;
+    grid-auto-columns: auto;
+    grid-template-rows: 1 / auto;
+  }
+
+  .categories__tab {
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+  }
+
+  .categories__tab>* {
+    grid-column: 2 / -2;
+  }
+
+  .categories__tab>.full {
+    grid-column: 1 / -1;
   }
 
   .content {
     display: grid;
-    grid-template-columns: 10% 1fr 1fr 1fr;
-    box-shadow: inset 0 0 5px black;
+    grid-gap: 10px;
+    grid-template-columns: repeat(6, calc(50% - 40px));
+    grid-template-rows: minmax(150px, 1fr);
+    padding: 0 20px;
   }
 
-  .tab-categories__items {
-    width: 200px;
+  .content>a:last-child {
+    margin: 0 20px;
   }
 
-  img {
-    width: 15em;
-  }
+
 
   .tab-title {
-    padding: 30px;
-    text-shadow: 2px 2px 1px $accent;
-    font-family: $alfa;
+    font-size: 2.25rem;
+    padding: 1.5em 0 1.5em 0.5em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .content {
+    overflow-x: auto;
   }
 
   .tab-categories__items {
     animation: appear 3s;
+    background-color: $ul-bg;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   @keyframes appear {
@@ -459,7 +498,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
   body {
     overflow-x: hidden;
     margin: 0;
-    font-family: $roboto;
+    font-family: Helvetica, Arial, sans-serif;
 
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
@@ -501,7 +540,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         span::after {
           display: block;
           height: 2px;
-          background-color: $accent;
+          background-color: $black;
           width: 2em;
           border-radius: 2px;
           position: relative;
@@ -549,7 +588,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         align-items: center;
 
         .nav-ul {
-          background-color: $accent;
+          background-color: $ul-bg;
           justify-content: space-around;
           position: relative;
           width: 75vw;
@@ -558,7 +597,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           height: 100%;
           align-items: center;
           transition: width 300ms ease-in-out;
-          box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
+          box-shadow: 8px 4px 19px -4px $black;
           border-radius: 5px;
 
           &__items {
@@ -567,13 +606,13 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
           &__links {
             text-decoration: none;
-            color: rgba(100%, 100%, 100%, 1);
+            color: $black;
             opacity: 0;
             transition: opacity 150ms ease-in-out;
           }
 
           &__links:hover {
-            color: rgb(209, 245, 248);
+            color: $linkAtHoverAnimation;
             transition: color 600ms ease-in-out;
           }
 
@@ -599,18 +638,8 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         left: -11px;
         margin: 0;
         top: 1em;
-        font-family: $alfa;
         font-size: 0.625rem;
         text-align: center;
-
-
-        span {
-          color: rgba(41.2%, 41.2%, 41.2%, 1);
-          font-weight: 100;
-          position: absolute;
-          top: 25px;
-          left: 87px;
-        }
       }
 
       &__brand a {
@@ -645,137 +674,121 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
       .categories__items {
         height: 50vh;
-        background-color: rgb(235, 232, 232);
+        width: 25vw;
+        background-color: $ul-bg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: -1;
+
+
+        img {
+          position: absolute;
+          height: auto;
+          width: 100%;
+          padding: 3em;
+        }
       }
 
       .wallpaper {
         grid-column: 1 / span 3;
-        grid-row: 12 / 15;
-        background-image: url(/images/background.jpg);
-        background-size: 100% auto;
-        background-position: center;
-        height: 600px;
+        grid-row: 15 / 19;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
       }
 
       .title__suits {
         grid-column: 1 / span 3;
         grid-row: 1;
         font-size: 2.25rem;
-        top: 16px;
+        padding: 1.5em 0;
         margin: 0;
-        text-shadow: 2px 2px 1px $accent;
-        font-family: $alfa;
+        text-transform: uppercase;
+
       }
 
       .title__ties {
         grid-column: 1 / span 3;
-        grid-row: 6;
+        grid-row: 10;
         font-size: 2.25rem;
-
-        top: 16px;
-
+        padding: 1.5em 0;
         margin: 0;
-        text-shadow: 2px 2px 1px $accent;
-        font-family: $alfa;
+        text-transform: uppercase;
       }
 
       .title__shoes {
         grid-column: 1 / span 3;
-        grid-row: 16;
+        grid-row: 19;
         font-size: 2.25rem;
-
-        top: 16px;
-
+        padding: 1.5em 0;
         margin: 0;
-        text-shadow: 2px 2px 1px $accent;
-        font-family: $alfa;
+        text-transform: uppercase;
       }
 
       .categories__items:nth-of-type(1) {
         grid-column: 1;
         grid-row: 2 / 6;
-        background-image: url(/images/suit-burgundy.png);
-        background-size: 100% auto;
-        background-position: center;
-        background-repeat: no-repeat;
       }
 
       .categories__items:nth-of-type(2) {
         grid-column: 2;
         grid-row: 2 / 6;
-
-        background-image: url(/images/suit-jacket-blue-2.png);
-        background-size: 100% auto;
-        background-position: center;
-        background-repeat: no-repeat;
       }
 
       .categories__items:nth-of-type(3) {
         grid-column: 3;
         grid-row: 2 / 6;
-        background-image: url(/images/suit-jacket-red.png);
-        background-size: 100% auto;
-        background-position: center;
-        background-repeat: no-repeat;
       }
 
       .categories__items:nth-of-type(4) {
         grid-column: 1;
-        grid-row: 7 / 10;
-
-        background-image: url(/images/blue-gold-tie.png);
-        background-size: 100% auto;
-        background-position: center;
-        background-repeat: no-repeat;
+        grid-row: 6 / 10;
       }
 
       .categories__items:nth-of-type(5) {
         grid-column: 2;
-        grid-row: 7 / 10;
-        background-image: url(/images/red-dot-blue-tie.png);
-        background-size: 100% auto;
-        background-position: center;
-        background-repeat: no-repeat;
+        grid-row: 6 / 10;
       }
 
       .categories__items:nth-of-type(6) {
         grid-column: 3;
-        grid-row: 7 / 10;
-        background-image: url(/images/suit-burgundy.png);
-        background-size: 100% auto;
-        background-position: center;
-        background-repeat: no-repeat;
+        grid-row: 6 / 10;
       }
 
       .categories__items:nth-of-type(7) {
         grid-column: 1;
-        grid-row: 17 / 20;
-        background-image: url(/images/Fashion-Height-Increasing-Oxfords-Shoes-Mens-Business-Shoes-Genuine-Leather-Dress-Shoes-Male-Wedding-Shoes-Grow.png);
-        background-size: 100% auto;
-        background-position: center;
-        background-repeat: no-repeat;
-
+        grid-row: 11 / 15;
       }
 
       .categories__items:nth-of-type(8) {
         grid-column: 2;
-        grid-row: 17 / 20;
-        background-image: url(/images/shoes-brown.png);
-        background-size: 100% auto;
-        background-position: center;
-        background-repeat: no-repeat;
-
+        grid-row: 11 / 15;
       }
 
       .categories__items:nth-of-type(9) {
         grid-column: 3;
-        grid-row: 17 / 20;
-        background-image: url(/images/mens-formal-shoes-500x500.png);
-        background-size: 100% auto;
-        background-position: center;
-        background-repeat: no-repeat;
-
+        grid-row: 11 / 15;
       }
+
+      .categories__items:nth-of-type(10) {
+        grid-column: 1;
+        grid-row: 20 / 24;
+      }
+
+      .categories__items:nth-of-type(11) {
+        grid-column: 2;
+        grid-row: 20 / 24;
+      }
+
+      .categories__items:nth-of-type(12) {
+        grid-column: 3;
+        grid-row: 20 / 24;
+      }
+
     }
   }
 
@@ -784,14 +797,26 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
     grid-row: 1 / 6;
 
     .aside {
-      display: grid;
-      grid-template-columns: 1fr;
-      justify-items: end;
       padding-right: 15px;
       height: 900px;
       position: sticky;
       top: 0;
       background: white;
+
+      .group {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+
+        .aside__cart {
+          padding: 0 0 7em;
+        }
+
+        .account {
+          padding: 4em 0.8em;
+        }
+      }
+
 
       p {
         margin: 0;
@@ -799,9 +824,29 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         top: 57px;
       }
 
+      .cart::after {
+        content: 'O';
+        text-align: center;
+        color: rgba(100%, 100%, 100%, 1);
+        height: 100px;
+        width: 100px;
+        background: black;
+        border: 10px solid black;
+        border-radius: 100%;
+        padding-left: 3px;
+        margin-left: 1em;
+      }
+
+      .vert {
+        transform: rotate(90deg);
+        position: absolute;
+        right: 0;
+        margin: 45em 0 0;
+      }
+
       .search {
         $size: 40px;
-        border: 2px solid rgba(19.9%, 46.9%, 92.9%, 1);
+        border: 2px solid $ul-bg;
         display: flex;
         width: 220px;
         border-radius: 50px;
@@ -839,13 +884,13 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           }
 
           .search__submit {
-            background: $accent;
+            background: $black;
             color: rgba(100%, 100%, 100%, 1);
 
             &:focus,
             &:hover {
               outline: 0;
-              box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.35);
+              box-shadow: 0 0 5px rgba($color: #7e4d03, $alpha: 0.35);
             }
           }
         }
@@ -858,7 +903,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           background: transparent;
           height: $size - 10px;
           width: $size - 10px;
-          color: $accent;
+          color: rgb(5, 5, 5);
           margin-left: auto;
           transition: background 150ms ease-in-out;
         }

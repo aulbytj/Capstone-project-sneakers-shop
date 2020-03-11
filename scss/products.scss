@@ -1,14 +1,7 @@
 * {
   box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
 }
-
-$roboto: 'Roboto Slab',
-serif;
-$monoton: 'Monoton',
-cursive;
-$alfa: 'Alfa Slab One',
-cursive;
-$accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
 @media (max-width: 767px) {
   .aside {
@@ -18,7 +11,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
   body {
     overflow-x: hidden;
     margin: 0;
-    font-family: $roboto;
+    font-family: Helvetica, Arial, sans-serif;
     display: grid;
 
     grid-template-columns: 1fr;
@@ -59,7 +52,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         span::after {
           display: block;
           height: 2px;
-          background-color: $accent;
+          background-color: rgba(0, 0, 0, 0.75);
           width: 2em;
           border-radius: 2px;
           position: relative;
@@ -110,7 +103,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
 
         .nav-ul {
-          background-color: $accent;
+          background-color: rgba(100%, 100%, 100%, 1);
           justify-content: space-around;
           position: relative;
           width: 50vw;
@@ -162,7 +155,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         left: 26px;
         margin: 0;
         top: 1em;
-        font-family: $alfa;
         font-size: 0.625rem;
         width: -moz-fit-content;
 
@@ -321,7 +313,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
   body {
     overflow-x: hidden;
     margin: 0;
-    font-family: $roboto;
+    font-family: Helvetica, Arial, sans-serif;
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -359,7 +351,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         span::after {
           display: block;
           height: 2px;
-          background-color: $accent;
+          background-color: rgba(0, 0, 0, 0.75);
           width: 2em;
           border-radius: 2px;
           position: relative;
@@ -409,7 +401,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         margin: 0 -25% 0 25%;
 
         .nav-ul {
-          background-color: $accent;
+          background-color: rgba(100%, 100%, 100%, 1);
           justify-content: space-around;
           position: relative;
           width: 50vw;
@@ -461,7 +453,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         left: 26px;
         margin: 0;
         top: 1em;
-        font-family: $alfa;
         font-size: 0.625rem;
         width: -moz-fit-content;
 
@@ -595,7 +586,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
   body {
     overflow: hidden;
     margin: 0;
-    font-family: $roboto;
+    font-family: Helvetica, Arial, sans-serif;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
   }
@@ -631,7 +622,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         span::after {
           display: block;
           height: 2px;
-          background-color: $accent;
+          background-color: rgba(0, 0, 0, 0.75);
           width: 2em;
           border-radius: 2px;
           position: relative;
@@ -680,7 +671,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         z-index: 1;
 
         .nav-ul {
-          background-color: $accent;
+          background-color: rgba(100%, 100%, 100%, 1);
           justify-content: space-around;
           position: relative;
           width: 75vw;
@@ -730,7 +721,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         left: -11px;
         margin: 0;
         top: 1em;
-        font-family: $alfa;
         font-size: 0.625rem;
         text-align: center;
 
@@ -932,13 +922,13 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           }
 
           .search__submit {
-            background: $accent;
+            background: rgba(0, 0, 0, 0.75);
             color: rgba(100%, 100%, 100%, 1);
 
             &:focus,
             &:hover {
               outline: 0;
-              box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.35);
+              box-shadow: 0 0 5px rgba($color: #7e4d03, $alpha: 0.35);
             }
           }
         }
@@ -951,7 +941,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           background: transparent;
           height: $size - 10px;
           width: $size - 10px;
-          color: $accent;
+          color: rgb(5, 5, 5);
           margin-left: auto;
           transition: background 150ms ease-in-out;
         }

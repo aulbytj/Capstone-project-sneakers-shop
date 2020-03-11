@@ -2,41 +2,35 @@
   box-sizing: border-box;
 }
 
-$roboto: 'Roboto Slab',
-serif;
-$monoton: 'Monoton',
-cursive;
-$alfa: 'Alfa Slab One',
-cursive;
-$accent: rgba(68.9%, 79.5%, 97.6%, 1);
+$ul-bg: #f5f5f5;
+$linkAtHoverAnimation: rgba(106, 107, 107, 1);
+$black: rgba(0, 0, 0, 0.75);
+
+$ff-h: Helvetica,
+Arial,
+sans-serif;
 
 .card {
   height: 50vh;
-
   width: 50vh;
-
   position: absolute;
-
   background: white;
-
   bottom: 0;
-
   right: 0;
   padding: 42px;
-
   display: flex;
-
   flex-direction: column;
 
-  h1 {
-    font-family: $monoton;
+  h2 {
+    font-size: 2.5rem;
     margin: 0;
+    font-family: $ff-h;
   }
 
   p {
     position: absolute;
-
     bottom: 0px;
+    font-family: $ff-h;
   }
 }
 
@@ -45,17 +39,18 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
     display: none;
   }
 
-  .card {
+  .side {
     display: none;
   }
 
   body {
-    overflow: hidden;
+    overflow-x: hidden;
     margin: 0;
-    font-family: $roboto;
-    display: grid;
-    grid-template-columns: 1fr;
+    font-family: $ff-h;
+    display: flex;
+    flex-direction: column;
   }
+
 
   header {
     grid-column: 1;
@@ -92,7 +87,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         span::after {
           display: block;
           height: 2px;
-          background-color: $accent;
+          background-color: $black;
           width: 2em;
           border-radius: 2px;
           position: relative;
@@ -143,7 +138,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
 
         .nav-ul {
-          background-color: $accent;
+          background-color: $ul-bg;
           justify-content: space-around;
           position: relative;
           width: 50vw;
@@ -153,7 +148,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           height: 100%;
           align-items: center;
           transition: width 300ms ease-in-out;
-          box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
+          box-shadow: 8px 4px 19px -4px $black;
           border-radius: 5px;
           padding: 0;
           margin: 0;
@@ -164,20 +159,20 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
           &__links {
             text-decoration: none;
-            color: rgba(100%, 100%, 100%, 1);
+            color: $black;
             opacity: 0;
             transition: opacity 150ms ease-in-out;
           }
 
           &__links:hover {
-            color: rgb(209, 245, 248);
+            color: $linkAtHoverAnimation;
             transition: color 600ms ease-in-out;
           }
 
           &__links::before {
             content: '';
             position: absolute;
-            top: 0;
+            top: -5px;
             left: 0;
             width: 0;
             height: 2px;
@@ -196,7 +191,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         left: 26px;
         margin: 0;
         top: 1em;
-        font-family: $alfa;
         font-size: 0.625rem;
         width: -moz-fit-content;
 
@@ -250,8 +244,13 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       left: 0;
       position: relative;
     }
-
   }
+
+  .card {
+    position: relative;
+    height: 30vh;
+  }
+
 
 }
 
@@ -260,14 +259,10 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
     display: none;
   }
 
-  .card {
-    display: none
-  }
-
   body {
     overflow: hidden;
     margin: 0;
-    font-family: $roboto;
+    font-family: $ff-h;
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -305,7 +300,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         span::after {
           display: block;
           height: 2px;
-          background-color: $accent;
+          background-color: $black;
           width: 2em;
           border-radius: 2px;
           position: relative;
@@ -355,7 +350,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         margin: 0 -25% 0 25%;
 
         .nav-ul {
-          background-color: $accent;
+          background-color: $ul-bg;
           justify-content: space-around;
           position: relative;
           width: 50vw;
@@ -365,7 +360,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           height: 100%;
           align-items: center;
           transition: width 300ms ease-in-out;
-          box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
+          box-shadow: 8px 4px 19px -4px $black;
           border-radius: 5px;
           padding: 0;
 
@@ -375,20 +370,20 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
           &__links {
             text-decoration: none;
-            color: rgba(100%, 100%, 100%, 1);
+            color: $black;
             opacity: 0;
             transition: opacity 150ms ease-in-out;
           }
 
           &__links:hover {
-            color: rgb(209, 245, 248);
+            color: $linkAtHoverAnimation;
             transition: color 600ms ease-in-out;
           }
 
           &__links::before {
             content: '';
             position: absolute;
-            top: 0;
+            top: -5px;
             left: 0;
             width: 0;
             height: 2px;
@@ -407,7 +402,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         left: 26px;
         margin: 0;
         top: 1em;
-        font-family: $alfa;
         font-size: 0.625rem;
         width: -moz-fit-content;
 
@@ -458,9 +452,9 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
 @media (min-width: 1024px) {
   body {
-    overflow: hidden;
+    overflow-x: hidden;
     margin: 0;
-    font-family: $roboto;
+    font-family: $ff-h;
   }
 
   body {
@@ -514,7 +508,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         span::after {
           display: block;
           height: 2px;
-          background-color: $accent;
+          background-color: $black;
           width: 2em;
           border-radius: 2px;
           position: relative;
@@ -562,7 +556,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         align-items: center;
 
         .nav-ul {
-          background-color: $accent;
+          background-color: $ul-bg;
           justify-content: space-around;
           position: relative;
           width: 75vw;
@@ -571,7 +565,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           height: 100%;
           align-items: center;
           transition: width 300ms ease-in-out;
-          box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
+          box-shadow: 8px 4px 19px -4px $black;
           border-radius: 5px;
 
           &__items {
@@ -580,20 +574,20 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
           &__links {
             text-decoration: none;
-            color: rgba(100%, 100%, 100%, 1);
+            color: $black;
             opacity: 0;
             transition: opacity 150ms ease-in-out;
           }
 
           &__links:hover {
-            color: rgb(209, 245, 248);
+            color: $linkAtHoverAnimation;
             transition: color 600ms ease-in-out;
           }
 
           &__links::before {
             content: '';
             position: absolute;
-            top: 0;
+            top: -5px;
             left: 0;
             width: 0;
             height: 2px;
@@ -612,7 +606,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         left: -11px;
         margin: 0;
         top: 1em;
-        font-family: $alfa;
         font-size: 0.625rem;
         text-align: center;
 
@@ -657,6 +650,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
   .side {
     grid-area: side;
 
+
     &__top {
       background-image: url(/images/side.jpg);
       background-size: cover;
@@ -664,12 +658,12 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
     }
 
     &__bottom {
+      display: flex;
       position: relative;
       z-index: -1;
     }
 
-    &__bottom h1 {
-      font-family: $monoton;
+    &__bottom h2 {
       font-size: 3.2em;
       margin: 0;
       line-height: 1em;
@@ -681,9 +675,8 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
     }
 
     &__bottom p {
-      position: absolute;
-      top: 24em;
-      left: 5em;
+      align-self: end;
+      padding-left: 5em;
     }
   }
 
@@ -748,13 +741,13 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           }
 
           .search__submit {
-            background: $accent;
+            background: $black;
             color: rgba(100%, 100%, 100%, 1);
 
             &:focus,
             &:hover {
               outline: 0;
-              box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.35);
+              box-shadow: 0 0 5px rgba($color: #7e4d03, $alpha: 0.35);
             }
           }
         }
@@ -767,7 +760,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           background: transparent;
           height: $size - 10px;
           width: $size - 10px;
-          color: $accent;
+          color: $black;
           margin-left: auto;
           transition: background 150ms ease-in-out;
         }
