@@ -827,6 +827,9 @@
     grid-column: 1;
     -ms-grid-row: 1;
     grid-row: 1;
+    background-image: url(/images/shirts-n-tie-sets.png);
+    background-size: cover;
+    background-position: center;
   }
   main .content:nth-of-type(2) {
     height: 30vh;
@@ -834,6 +837,9 @@
     grid-row: 1;
     -ms-grid-column: 2;
     grid-column: 2;
+    background-image: url(/images/shirts-n-tie-sets.png);
+    background-size: cover;
+    background-position: center;
   }
   main .content:nth-of-type(3) {
     height: 30vh;
@@ -841,6 +847,9 @@
     grid-row: 1;
     -ms-grid-column: 3;
     grid-column: 3;
+    background-image: url(/images/shirts-n-tie-sets.png);
+    background-size: cover;
+    background-position: center;
   }
   main .content:nth-of-type(4) {
     height: 10vh;
@@ -920,6 +929,9 @@
     -ms-grid-row: 2;
     -ms-grid-row-span: 4;
     grid-row: 2 / 6;
+    background-image: url(/images/shirts-n-tie-sets.png);
+    background-size: cover;
+    background-position: center;
   }
   aside {
     -ms-grid-column: 3;
