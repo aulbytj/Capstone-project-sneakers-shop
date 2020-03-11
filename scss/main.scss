@@ -277,7 +277,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
     grid-row: 1;
     height: 8vh;
 
-
     .menu {
       position: absolute;
       top: 49%;
@@ -290,7 +289,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       display: grid;
       height: 8vh;
       position: relative;
-
 
       .toggle {
         display: none;
@@ -356,7 +354,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         z-index: 1;
         margin: 0 -25% 0 25%;
 
-
         .nav-ul {
           background-color: $accent;
           justify-content: space-around;
@@ -414,10 +411,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         font-size: 0.625rem;
         width: -moz-fit-content;
 
-
-
-
-
         span {
           color: rgba(41.2%, 41.2%, 41.2%, 1);
           font-weight: 100;
@@ -426,8 +419,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           left: 6px;
         }
       }
-
-
 
       &__brand a {
         color: rgba($color: #000000, $alpha: 0.95);
@@ -444,9 +435,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           line-height: 2.5em;
         }
       }
-
     }
-
   }
 
   main {
@@ -464,13 +453,8 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       left: 0;
       position: absolute;
     }
-
-
   }
-
-
 }
-
 
 @media (min-width: 1024px) {
   body {
@@ -478,7 +462,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
     margin: 0;
     font-family: $roboto;
   }
-
 
   body {
     display: grid;
@@ -578,7 +561,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         height: 450px;
         align-items: center;
 
-
         .nav-ul {
           background-color: $accent;
           justify-content: space-around;
@@ -591,7 +573,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           transition: width 300ms ease-in-out;
           box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
           border-radius: 5px;
-
 
           &__items {
             position: relative;
@@ -634,7 +615,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         font-family: $alfa;
         font-size: 0.625rem;
         text-align: center;
-
 
         span {
           color: rgba(41.2%, 41.2%, 41.2%, 1);
@@ -698,7 +678,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       left: 10%;
       text-shadow: 2px 2px 2px bisque;
       z-index: -1;
-
     }
 
     &__bottom p {
@@ -706,10 +685,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       top: 24em;
       left: 5em;
     }
-
   }
-
-
 
   aside {
     grid-area: aside;
@@ -729,7 +705,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         top: 57px;
       }
 
-
       .search {
         $size: 40px;
         border: 2px solid rgba(19.9%, 46.9%, 92.9%, 1);
@@ -743,8 +718,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         position: relative;
         transition: width 300ms cubic-bezier(.22, .21, .27, 1.25);
         overflow: hidden;
-
-
 
         &__input {
           flex-grow: 1;
@@ -798,7 +771,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           margin-left: auto;
           transition: background 150ms ease-in-out;
         }
-
       }
 
       &__category ul {

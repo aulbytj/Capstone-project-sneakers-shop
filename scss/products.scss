@@ -323,7 +323,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
     margin: 0;
     font-family: $roboto;
     display: grid;
-
     grid-template-columns: 1fr;
   }
 
@@ -331,7 +330,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
     grid-column: 1;
     grid-row: 1;
     height: 8vh;
-
 
     .menu {
       position: absolute;
@@ -345,7 +343,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       display: grid;
       height: 8vh;
       position: relative;
-
 
       .toggle {
         display: none;
@@ -411,7 +408,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         z-index: 1;
         margin: 0 -25% 0 25%;
 
-
         .nav-ul {
           background-color: $accent;
           justify-content: space-around;
@@ -469,10 +465,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         font-size: 0.625rem;
         width: -moz-fit-content;
 
-
-
-
-
         span {
           color: rgba(41.2%, 41.2%, 41.2%, 1);
           font-weight: 100;
@@ -481,8 +473,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           left: 6px;
         }
       }
-
-
 
       &__brand a {
         color: rgba($color: #000000, $alpha: 0.95);
@@ -499,9 +489,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           line-height: 2.5em;
         }
       }
-
     }
-
   }
 
   main {
@@ -511,13 +499,11 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
     position: relative;
     top: 1em;
 
-
     .main-content {
       display: grid;
       grid-gap: 3px;
       height: auto;
     }
-
 
     .content {
       background-color: #dddfe4;
@@ -550,20 +536,15 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       grid-column: 1;
       grid-row: 2;
       align-content: normal;
-
       display: inline-flex;
-
       justify-content: space-around;
-
       align-items: center;
-
     }
 
     .content:nth-of-type(5) {
       height: 10vh;
       grid-column: 1;
       grid-row: 3;
-
     }
 
     .content:nth-of-type(6) {
@@ -572,11 +553,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       grid-row: 4 / 5;
       display: grid;
       padding: 2em;
-
-
       align-content: flex-start;
-
-
 
       p {
         text-align: left;
@@ -590,13 +567,9 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       grid-row: 5;
       width: 30%;
       display: grid;
-
       font-size: xx-large;
-
       text-align: center;
-
       align-content: center;
-
     }
 
     .content:nth-of-type(8) {
@@ -606,41 +579,30 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       width: 69%;
       justify-self: flex-end;
       display: grid;
-
       align-content: center;
-
       justify-content: center;
-
     }
 
     .content:nth-of-type(9) {
       height: 75vh;
       grid-column: 2 / 4;
       grid-row: 2 / 6;
-
     }
-
   }
-
-
 }
-
 
 @media (min-width: 1024px) {
   body {
     overflow: hidden;
     margin: 0;
     font-family: $roboto;
-
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
-
   }
 
   header {
     grid-column: 1;
     grid-row: 1 / 6;
-
 
     .menu {
       position: absolute;
@@ -653,7 +615,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       display: grid;
       height: 100vh;
       position: relative;
-
 
       .toggle {
         display: none;
@@ -718,7 +679,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         align-items: center;
         z-index: 1;
 
-
         .nav-ul {
           background-color: $accent;
           justify-content: space-around;
@@ -774,7 +734,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         font-size: 0.625rem;
         text-align: center;
 
-
         span {
           color: rgba(41.2%, 41.2%, 41.2%, 1);
           font-weight: 100;
@@ -798,19 +757,14 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           line-height: 2.5em;
         }
       }
-
     }
-
   }
-
-
 
   main {
     grid-column: 2;
     grid-row: 1 / 6;
     bottom: 3em;
     position: relative;
-
 
     .main-content {
       display: grid;
@@ -820,10 +774,8 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       height: auto;
     }
 
-
     .content {
       background-color: #dddfe4;
-
     }
 
     .content:nth-of-type(1) {
@@ -858,20 +810,15 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       grid-column: 1;
       grid-row: 2;
       align-content: normal;
-
       display: inline-flex;
-
       justify-content: space-around;
-
       align-items: center;
-
     }
 
     .content:nth-of-type(5) {
       height: 10vh;
       grid-column: 1;
       grid-row: 3;
-
     }
 
     .content:nth-of-type(6) {
@@ -880,16 +827,11 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       grid-row: 4 / 5;
       display: grid;
       padding: 2em;
-
-
       align-content: flex-start;
-
-
 
       p {
         text-align: left;
       }
-
     }
 
     .content:nth-of-type(7) {
@@ -898,13 +840,9 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       grid-row: 5;
       width: 30%;
       display: grid;
-
       font-size: xx-large;
-
       text-align: center;
-
       align-content: center;
-
     }
 
     .content:nth-of-type(8) {
@@ -914,11 +852,8 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       width: 69%;
       justify-self: flex-end;
       display: grid;
-
       align-content: center;
-
       justify-content: center;
-
     }
 
     .content:nth-of-type(9) {
@@ -929,9 +864,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       background-size: cover;
       background-position: center;
     }
-
   }
-
 
   aside {
     // grid-area: aside;

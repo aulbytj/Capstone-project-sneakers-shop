@@ -23,7 +23,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
     overflow-x: hidden;
     margin: 0;
     font-family: $roboto;
-
   }
 
   header {
@@ -31,8 +30,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
     position: flex;
     width: 100%;
     background: rgb(235, 232, 232);
-    ;
-
 
     .menu {
       position: absolute;
@@ -47,7 +44,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       height: 8vh;
       position: relative;
       width: 100%;
-
 
       .toggle {
         display: none;
@@ -113,7 +109,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         z-index: 1;
         margin: 0 -25% 0 25%;
 
-
         .nav-ul {
           background-color: $accent;
           justify-content: space-around;
@@ -171,10 +166,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         font-size: 0.625rem;
         width: -moz-fit-content;
 
-
-
-
-
         span {
           color: rgba(41.2%, 41.2%, 41.2%, 1);
           font-weight: 100;
@@ -183,8 +174,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           left: 6px;
         }
       }
-
-
 
       &__brand a {
         color: rgba($color: #000000, $alpha: 0.95);
@@ -209,11 +198,8 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
   .categories__tab {
     background: rgb(235, 232, 232);
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
   }
 
   .content {
@@ -225,7 +211,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
   .tab-categories__items {
     width: 200px;
   }
-
 
   .tab-title {
     padding: 30px;
@@ -255,14 +240,12 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
     overflow-x: hidden;
     margin: 0;
     font-family: $roboto;
-
   }
 
   header {
     display: flex;
     position: relative;
     width: 100%;
-
 
     .menu {
       position: absolute;
@@ -277,7 +260,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
       height: 8vh;
       position: relative;
       width: 100%;
-
 
       .toggle {
         display: none;
@@ -401,10 +383,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         font-size: 0.625rem;
         width: -moz-fit-content;
 
-
-
-
-
         span {
           color: rgba(41.2%, 41.2%, 41.2%, 1);
           font-weight: 100;
@@ -413,8 +391,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
           left: 6px;
         }
       }
-
-
 
       &__brand a {
         color: rgba($color: #000000, $alpha: 0.95);
@@ -454,7 +430,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
 
   img {
     width: 15em;
-
   }
 
   .tab-title {
@@ -480,10 +455,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
   }
 }
 
-
-
-
-
 @media (min-width: 1024px) {
   body {
     overflow-x: hidden;
@@ -494,7 +465,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
     grid-template-columns: 1fr 5fr 1fr;
   }
 
-
   .categories-tab {
     display: none;
   }
@@ -502,7 +472,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
   header {
     grid-column: 1;
     grid-row: 1 / 6;
-
 
     .menu {
       position: absolute;
@@ -578,7 +547,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         width: 100vw;
         height: 450px;
         align-items: center;
-
 
         .nav-ul {
           background-color: $accent;
@@ -668,22 +636,16 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
     grid-column: 2;
     grid-row: 1 / 6;
 
-
-
     .categories {
-
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: 1 / auto;
       grid-gap: 2px;
       height: auto;
 
-
       .categories__items {
-
         height: 50vh;
         background-color: rgb(235, 232, 232);
-
       }
 
       .wallpaper {
@@ -694,9 +656,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         background-position: center;
         height: 600px;
       }
-
-
-
 
       .title__suits {
         grid-column: 1 / span 3;
@@ -732,9 +691,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         font-family: $alfa;
       }
 
-
-
-
       .categories__items:nth-of-type(1) {
         grid-column: 1;
         grid-row: 2 / 6;
@@ -742,7 +698,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         background-size: 100% auto;
         background-position: center;
         background-repeat: no-repeat;
-
       }
 
       .categories__items:nth-of-type(2) {
@@ -824,9 +779,7 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
     }
   }
 
-
   aside {
-    // grid-area: aside;
     grid-column: 3;
     grid-row: 1 / 6;
 
@@ -846,7 +799,6 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         top: 57px;
       }
 
-
       .search {
         $size: 40px;
         border: 2px solid rgba(19.9%, 46.9%, 92.9%, 1);
@@ -854,18 +806,15 @@ $accent: rgba(68.9%, 79.5%, 97.6%, 1);
         width: 220px;
         border-radius: 50px;
         height: $size;
-        width: $size; // shrinks the size of the search area 
+        width: $size;
         padding: 3px;
         position: relative;
         transition: width 300ms cubic-bezier(.22, .21, .27, 1.25);
         overflow: hidden;
 
-
-
         &__input {
-          flex-grow: 1; // allows the input to take up the entire width 
+          flex-grow: 1;
           font-size: 1rem;
-          // width: 180px;
           padding: 0 0.1em;
           border: none;
           position: absolute;

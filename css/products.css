@@ -1112,11 +1112,6 @@
     cursor: initial;
   }
 
-  aside .aside .search:focus-within .search__submit {
-    background: #b0cbf9;
-    color: white;
-  }
-
   aside .aside .search__submit {
     cursor: pointer;
     font-size: 1rem;
@@ -1129,6 +1124,11 @@
     margin-left: auto;
     -webkit-transition: background 150ms ease-in-out;
     transition: background 150ms ease-in-out;
+  }
+
+  aside .aside .search:focus-within .search__submit {
+    background: #b0cbf9;
+    color: white;
   }
 
   aside .aside .search:focus-within .search__submit:focus,
