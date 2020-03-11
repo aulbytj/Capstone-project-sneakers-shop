@@ -7,7 +7,7 @@ For this project, I use HTML and CSS, Flexbox and CSS grid systems to build the 
 
 features that I'm proud of is the navbar that I made with pure CSS and HTML
 
-![screenshot](./app_screenshot.png)
+![screenshot](./images/Screenshot.png)
 
 
 
