@@ -593,6 +593,7 @@ sans-serif;
           transition: width 300ms ease-in-out;
           box-shadow: 8px 4px 19px -4px $black;
           border-radius: 5px;
+          z-index: 1;
 
           &__items {
             position: relative;
@@ -671,6 +672,7 @@ sans-serif;
       background-image: url(/images/hero.jpg);
       background-size: cover;
       background-position: center;
+      z-index: -1;
     }
   }
 
@@ -682,6 +684,7 @@ sans-serif;
       background-image: url(/images/side.jpg);
       background-size: cover;
       background-position: center;
+      z-index: -1;
     }
 
     &__bottom {

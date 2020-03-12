@@ -614,6 +614,7 @@
     -webkit-box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
             box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
     border-radius: 5px;
+    z-index: 1;
   }
   header .header nav .nav-ul__items {
     position: relative;
@@ -684,6 +685,7 @@
     background-image: url(/images/hero.jpg);
     background-size: cover;
     background-position: center;
+    z-index: -1;
   }
   .side {
     -ms-grid-row: 2;
@@ -695,6 +697,7 @@
     background-image: url(/images/side.jpg);
     background-size: cover;
     background-position: center;
+    z-index: -1;
   }
   .side__bottom {
     display: -webkit-box;
