@@ -492,7 +492,7 @@
     grid-area: hero;
     display: -ms-grid;
     display: grid;
-    background-image: url(../images/hero2.jpg);
+    background: url(../../Capstone-project-sneakers-shop/images/hero2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
