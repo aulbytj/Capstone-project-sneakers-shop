@@ -1063,6 +1063,7 @@
     margin-left: 1em;
   }
   aside .aside .vert {
+    display: none;
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
     position: absolute;
