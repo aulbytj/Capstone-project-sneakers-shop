@@ -39,7 +39,8 @@ sans-serif;
     display: none;
   }
 
-  .side {
+  .side,
+  .hero {
     display: none;
   }
 
@@ -78,7 +79,7 @@ sans-serif;
 
       .toggle-label {
         position: absolute;
-        top: 66%;
+        top: 41%;
         right: 3%;
         cursor: pointer;
 
@@ -259,6 +260,10 @@ sans-serif;
     display: none;
   }
 
+  .hero {
+    display: none;
+  }
+
   body {
     overflow: hidden;
     margin: 0;
@@ -291,7 +296,7 @@ sans-serif;
 
       .toggle-label {
         position: absolute;
-        top: 66%;
+        top: 41%;
         right: 3%;
         cursor: pointer;
 
@@ -451,16 +456,16 @@ sans-serif;
 }
 
 @media (min-width: 1024px) {
+
   body {
     overflow-x: hidden;
     margin: 0;
     font-family: $ff-h;
-  }
 
-  body {
     display: grid;
     grid-template-columns: 260px 2fr 2fr 260px;
     grid-template-areas:
+      "hero hero hero hero"
       "header main side aside"
       "header main side aside"
       "header main side aside"
@@ -478,8 +483,29 @@ sans-serif;
     padding-left: 5px;
   }
 
+  .hero {
+    grid-area: hero;
+    display: grid;
+    background-image: url(/images/hero2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    text-align: center;
+    align-content: center;
+    margin-bottom: 20em;
+
+    h1 {
+      font-size: 13em;
+      position: relative;
+      color: aliceblue;
+    }
+
+  }
+
   header {
     grid-area: header;
+    height: 100vh;
 
     .menu {
       position: absolute;
@@ -626,6 +652,7 @@ sans-serif;
         align-self: end;
         position: absolute;
         left: 43px;
+        padding: 0;
 
         ul {
           list-style: none;
@@ -772,49 +799,54 @@ sans-serif;
     }
   }
 
-  .fade-up {
-    animation: appear 3s;
+  .fadeInOnScroll {
+    opacity: 0;
+    transition: opacity 1s ease-in;
   }
 
-  .fade-slide-right {
-    animation: slide-right 3s;
+  .fadeInOnScroll.appear {
+    opacity: 1;
   }
+
+
+
+
+  .up {
+    opacity: 0;
+    transform: translateY(-20%);
+    transform: opacity 1s ease-in;
+  }
+
+  .right {
+    opacity: 0;
+    transform: translateX(20%);
+    transform: opacity 1s ease-in;
+    transform: transform 1s ease-in;
+  }
+
+  .up.appear,
+  .right.appear {
+    opacity: 1;
+    transform: translate(0);
+  }
+
 
   .fade-in {
-    animation: show 6s;
+    animation-name: seen;
+    animation-duration: 4s;
+    animation-delay: 2s;
+
   }
 
-  @keyframes appear {
+  @keyframes seen {
     from {
       opacity: 0;
-      transform: translateY(-50px);
+      transform: translateZ(-50px);
     }
 
     to {
       opacity: 1;
       transform: translate(0);
-    }
-  }
-
-  @keyframes slide-right {
-    from {
-      opacity: 0;
-      transform: translateX(100px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes show {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
     }
   }
 }

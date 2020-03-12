@@ -1,1 +1,4 @@
-.stylelintrc.json, .DS_Store
+.stylelintrc.json 
+.DS_Store
+sasslint.config.yml
+

@@ -3,6 +3,14 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
+$ul-bg: #f5f5f5;
+$linkAtHoverAnimation: rgba(106, 107, 107, 1);
+$black: rgba(0, 0, 0, 0.75);
+
+$ff-h: Helvetica,
+Arial,
+sans-serif;
+
 @media (max-width: 767px) {
   .aside {
     display: none;
@@ -43,7 +51,7 @@
 
       .toggle-label {
         position: absolute;
-        top: 66%;
+        top: 41%;
         right: 3%;
         cursor: pointer;
 
@@ -113,7 +121,7 @@
           height: 100%;
           align-items: center;
           transition: width 300ms ease-in-out;
-          box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
+          box-shadow: 8px 4px 19px -4px $black;
           border-radius: 5px;
           padding: 0;
 
@@ -123,20 +131,20 @@
 
           &__links {
             text-decoration: none;
-            color: rgba(100%, 100%, 100%, 1);
+            color: $black;
             opacity: 0;
             transition: opacity 150ms ease-in-out;
           }
 
           &__links:hover {
-            color: rgb(209, 245, 248);
+            color: $linkAtHoverAnimation;
             transition: color 600ms ease-in-out;
           }
 
           &__links::before {
             content: '';
             position: absolute;
-            top: 0;
+            top: -5px;
             left: 0;
             width: 0;
             height: 2px;
@@ -217,25 +225,35 @@
       height: 30;
       grid-column: 1;
       grid-row: 1;
-      background-image: url(/images/shirts-n-tie-sets.png);
-      background-size: cover;
+      background-image: url(/images/gray-jack-gold-tie2.png);
+      background-size: 50%;
       background-position: center;
+      background-repeat: no-repeat;
       height: 60vh;
     }
 
     .content:nth-of-type(2) {
+      display: none;
       height: 30vh;
       grid-row: 1;
       grid-column: 2;
     }
 
     .content:nth-of-type(3) {
+      display: none;
       height: 30vh;
       grid-row: 1;
       grid-column: 3;
     }
 
     .content:nth-of-type(4) {
+      display: none;
+      height: 30vh;
+      grid-row: 1;
+      grid-column: 3;
+    }
+
+    .content:nth-of-type(5) {
       height: 10vh;
       grid-column: 1;
       grid-row: 2;
@@ -249,14 +267,17 @@
 
     }
 
-    .content:nth-of-type(5) {
+    .content:nth-of-type(6) {
+      display: inline-flex;
+      justify-content: space-around;
+      align-items: center;
       height: 10vh;
       grid-column: 1;
       grid-row: 3;
 
     }
 
-    .content:nth-of-type(6) {
+    .content:nth-of-type(7) {
       height: 40vh;
       grid-column: 1;
       grid-row: 4 / 5;
@@ -274,10 +295,11 @@
 
     }
 
-    .content:nth-of-type(7) {
+    .content:nth-of-type(8) {
       height: 10vh;
       grid-column: 1;
       grid-row: 5;
+      width: 30%;
 
       display: grid;
 
@@ -289,13 +311,13 @@
 
     }
 
-    .content:nth-of-type(8) {
+    .content:nth-of-type(9) {
       height: 10vh;
       grid-column: 1;
-      grid-row: 6;
-
+      grid-row: 5;
+      width: 69.6%;
       display: grid;
-
+      justify-self: flex-end;
       align-content: center;
 
       justify-content: center;
@@ -342,7 +364,7 @@
 
       .toggle-label {
         position: absolute;
-        top: 66%;
+        top: 41%;
         right: 3%;
         cursor: pointer;
 
@@ -401,7 +423,7 @@
         margin: 0 -25% 0 25%;
 
         .nav-ul {
-          background-color: rgba(100%, 100%, 100%, 1);
+          background-color: $ul-bg;
           justify-content: space-around;
           position: relative;
           width: 50vw;
@@ -411,7 +433,7 @@
           height: 100%;
           align-items: center;
           transition: width 300ms ease-in-out;
-          box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
+          box-shadow: 8px 4px 19px -4px $black;
           border-radius: 5px;
           padding: 0;
 
@@ -421,20 +443,20 @@
 
           &__links {
             text-decoration: none;
-            color: rgba(100%, 100%, 100%, 1);
+            color: $black;
             opacity: 0;
             transition: opacity 150ms ease-in-out;
           }
 
           &__links:hover {
-            color: rgb(209, 245, 248);
+            color: $linkAtHoverAnimation;
             transition: color 600ms ease-in-out;
           }
 
           &__links::before {
             content: '';
             position: absolute;
-            top: 0;
+            top: -5px;
             left: 0;
             width: 0;
             height: 2px;
@@ -492,6 +514,8 @@
 
     .main-content {
       display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1 / auto;
       grid-gap: 3px;
       height: auto;
     }
@@ -501,29 +525,41 @@
     }
 
     .content:nth-of-type(1) {
-      height: 30;
-      grid-column: 1;
+      grid-column: 1 / span 2;
       grid-row: 1;
-      background-image: url(/images/shirts-n-tie-sets.png);
-      background-size: contain;
+      background-image: url(/images/gray-jack-gold-tie2.png);
+      background-size: 28%;
       background-position: center;
-      height: 60vh;
+      background-repeat: no-repeat;
+      height: 30vh;
     }
 
     .content:nth-of-type(2) {
+      background-image: url(/images/gray-jack-gold-tie-pants.png);
+      background-size: 56%;
+      background-position: center;
+      background-repeat: no-repeat;
       height: 30vh;
       grid-row: 1;
-      grid-column: 2;
+      grid-column: 3;
     }
 
     .content:nth-of-type(3) {
+      display: none;
       height: 30vh;
       grid-row: 1;
       grid-column: 3;
     }
 
     .content:nth-of-type(4) {
-      height: 10vh;
+      display: none;
+      height: 30vh;
+      grid-row: 1;
+      grid-column: 4;
+    }
+
+    .content:nth-of-type(5) {
+      height: 24vh;
       grid-column: 1;
       grid-row: 2;
       align-content: normal;
@@ -532,16 +568,19 @@
       align-items: center;
     }
 
-    .content:nth-of-type(5) {
+    .content:nth-of-type(6) {
+      display: inline-flex;
+      justify-content: space-around;
+      align-items: center;
       height: 10vh;
       grid-column: 1;
       grid-row: 3;
     }
 
-    .content:nth-of-type(6) {
-      height: 40vh;
+    .content:nth-of-type(7) {
+      height: 50vh;
       grid-column: 1;
-      grid-row: 4 / 5;
+      grid-row: 4 / 7;
       display: grid;
       padding: 2em;
       align-content: flex-start;
@@ -552,21 +591,21 @@
 
     }
 
-    .content:nth-of-type(7) {
+    .content:nth-of-type(8) {
       height: 10vh;
-      grid-column: 1;
-      grid-row: 5;
-      width: 30%;
+      grid-column: 2;
+      grid-row: 6;
+      width: 62%;
       display: grid;
       font-size: xx-large;
       text-align: center;
       align-content: center;
     }
 
-    .content:nth-of-type(8) {
+    .content:nth-of-type(9) {
       height: 10vh;
-      grid-column: 1;
-      grid-row: 5;
+      grid-column: 2 / span 3;
+      grid-row: 6;
       width: 69%;
       justify-self: flex-end;
       display: grid;
@@ -574,7 +613,11 @@
       justify-content: center;
     }
 
-    .content:nth-of-type(9) {
+    .content:nth-of-type(10) {
+      background-image: url(/images/gray-jack-gold-tie2.png);
+      background-size: 75%;
+      background-position: center;
+      background-repeat: no-repeat;
       height: 75vh;
       grid-column: 2 / 4;
       grid-row: 2 / 6;
@@ -670,8 +713,9 @@
         align-items: center;
         z-index: 1;
 
+
         .nav-ul {
-          background-color: rgba(100%, 100%, 100%, 1);
+          background-color: $ul-bg;
           justify-content: space-around;
           position: relative;
           width: 75vw;
@@ -680,7 +724,7 @@
           height: 100%;
           align-items: center;
           transition: width 300ms ease-in-out;
-          box-shadow: 8px 4px 19px -4px rgba(0, 0, 0, 0.75);
+          box-shadow: 8px 4px 19px -4px $black;
           border-radius: 5px;
 
           &__items {
@@ -689,20 +733,20 @@
 
           &__links {
             text-decoration: none;
-            color: rgba(100%, 100%, 100%, 1);
+            color: $black;
             opacity: 0;
             transition: opacity 150ms ease-in-out;
           }
 
           &__links:hover {
-            color: rgb(209, 245, 248);
+            color: $linkAtHoverAnimation;
             transition: color 600ms ease-in-out;
           }
 
           &__links::before {
             content: '';
             position: absolute;
-            top: 0;
+            top: -5px;
             left: 0;
             width: 0;
             height: 2px;
@@ -758,7 +802,7 @@
 
     .main-content {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       grid-template-rows: 1 / auto;
       grid-gap: 3px;
       height: auto;
@@ -769,11 +813,12 @@
     }
 
     .content:nth-of-type(1) {
-      height: 30;
+      height: 30vh;
       grid-column: 1;
       grid-row: 1;
-      background-image: url(/images/shirts-n-tie-sets.png);
-      background-size: cover;
+      background-image: url(/images/gray-jack-gold-tie-pants.png);
+      background-repeat: no-repeat;
+      background-size: 50%;
       background-position: center;
     }
 
@@ -781,8 +826,9 @@
       height: 30vh;
       grid-row: 1;
       grid-column: 2;
-      background-image: url(/images/shirts-n-tie-sets.png);
-      background-size: cover;
+      background-image: url(/images/gray-jack-gold-tie-pants.png);
+      background-repeat: no-repeat;
+      background-size: 50%;
       background-position: center;
     }
 
@@ -790,14 +836,25 @@
       height: 30vh;
       grid-row: 1;
       grid-column: 3;
-      background-image: url(/images/shirts-n-tie-sets.png);
-      background-size: cover;
+      background-image: url(/images/gray-jack-gold-tie.png);
+      background-repeat: no-repeat;
+      background-size: 50%;
       background-position: center;
     }
 
     .content:nth-of-type(4) {
-      height: 10vh;
-      grid-column: 1;
+      height: 30vh;
+      grid-row: 1;
+      grid-column: 4;
+      background-image: url(/images/gray-jack-gold-tie.png);
+      background-repeat: no-repeat;
+      background-size: 50%;
+      background-position: center;
+    }
+
+    .content:nth-of-type(5) {
+      height: 16vh;
+      grid-column: 1 / span 2;
       grid-row: 2;
       align-content: normal;
       display: inline-flex;
@@ -805,15 +862,18 @@
       align-items: center;
     }
 
-    .content:nth-of-type(5) {
+    .content:nth-of-type(6) {
+      display: inline-flex;
+      justify-content: space-around;
+      align-items: center;
       height: 10vh;
-      grid-column: 1;
+      grid-column: 1 / span 2;
       grid-row: 3;
     }
 
-    .content:nth-of-type(6) {
+    .content:nth-of-type(7) {
       height: 40vh;
-      grid-column: 1;
+      grid-column: 1 / span 2;
       grid-row: 4 / 5;
       display: grid;
       padding: 2em;
@@ -824,20 +884,20 @@
       }
     }
 
-    .content:nth-of-type(7) {
+    .content:nth-of-type(8) {
       height: 10vh;
       grid-column: 1;
       grid-row: 5;
-      width: 30%;
+      width: 62%;
       display: grid;
       font-size: xx-large;
       text-align: center;
       align-content: center;
     }
 
-    .content:nth-of-type(8) {
+    .content:nth-of-type(9) {
       height: 10vh;
-      grid-column: 1;
+      grid-column: 1 / span 2;
       grid-row: 5;
       width: 69%;
       justify-self: flex-end;
@@ -846,31 +906,44 @@
       justify-content: center;
     }
 
-    .content:nth-of-type(9) {
+    .content:nth-of-type(10) {
       height: 75vh;
-      grid-column: 2 / 4;
+      grid-column: 3 / 5;
       grid-row: 2 / 6;
-      background-image: url(/images/shirts-n-tie-sets.png);
-      background-size: cover;
+      background-image: url(/images/gray-jack-gold-tie2.png);
+      background-size: 75%;
+      background-repeat: no-repeat;
       background-position: center;
     }
   }
 
   aside {
-    // grid-area: aside;
     grid-column: 3;
     grid-row: 1 / 6;
-    z-index: 2;
+
+    z-index: 1;
 
     .aside {
-      display: grid;
-      grid-template-columns: 1fr;
-      justify-items: end;
       padding-right: 15px;
-      height: 100vh;
-      position: relative;
-
+      height: 900px;
+      position: sticky;
+      top: 0;
       background: white;
+
+      .group {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+
+        .aside__cart {
+          padding: 0 0 7em;
+        }
+
+        .account {
+          padding: 4em 0.8em;
+        }
+      }
+
 
       p {
         margin: 0;
@@ -878,26 +951,42 @@
         top: 57px;
       }
 
+      .cart::after {
+        content: 'O';
+        text-align: center;
+        color: rgba(100%, 100%, 100%, 1);
+        height: 100px;
+        width: 100px;
+        background: black;
+        border: 10px solid black;
+        border-radius: 100%;
+        padding-left: 3px;
+        margin-left: 1em;
+      }
+
+      .vert {
+        transform: rotate(90deg);
+        position: absolute;
+        right: 0;
+        margin: 45em 0 0;
+      }
 
       .search {
         $size: 40px;
-        border: 2px solid rgba(19.9%, 46.9%, 92.9%, 1);
+        border: 2px solid $ul-bg;
         display: flex;
         width: 220px;
         border-radius: 50px;
         height: $size;
-        width: $size; // shrinks the size of the search area 
+        width: $size;
         padding: 3px;
         position: relative;
         transition: width 300ms cubic-bezier(.22, .21, .27, 1.25);
         overflow: hidden;
 
-
-
         &__input {
-          flex-grow: 1; // allows the input to take up the entire width 
+          flex-grow: 1;
           font-size: 1rem;
-          // width: 180px;
           padding: 0 0.1em;
           border: none;
           position: absolute;
@@ -922,7 +1011,7 @@
           }
 
           .search__submit {
-            background: rgba(0, 0, 0, 0.75);
+            background: $black;
             color: rgba(100%, 100%, 100%, 1);
 
             &:focus,
