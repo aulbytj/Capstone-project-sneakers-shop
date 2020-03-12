@@ -217,7 +217,7 @@
     grid-column: 1;
     -ms-grid-row: 1;
     grid-row: 1;
-    background-image: url(../images/gray-jack-gold-tie2.png);
+    background-image: url(./images/gray-jack-gold-tie2.png);
     background-size: 50%;
     background-position: center;
     background-repeat: no-repeat;
@@ -546,14 +546,14 @@
     grid-column: 1 / span 2;
     -ms-grid-row: 1;
     grid-row: 1;
-    background-image: url(../images/gray-jack-gold-tie2.png);
+    background-image: url(./images/gray-jack-gold-tie2.png);
     background-size: 28%;
     background-position: center;
     background-repeat: no-repeat;
     height: 30vh;
   }
   main .content:nth-of-type(2) {
-    background-image: url(../images/gray-jack-gold-tie-pants.png);
+    background-image: url(./images/gray-jack-gold-tie-pants.png);
     background-size: 56%;
     background-position: center;
     background-repeat: no-repeat;
@@ -659,7 +659,7 @@
             justify-content: center;
   }
   main .content:nth-of-type(10) {
-    background-image: url(../images/gray-jack-gold-tie2.png);
+    background-image: url(./images/gray-jack-gold-tie2.png);
     background-size: 75%;
     background-position: center;
     background-repeat: no-repeat;
@@ -878,7 +878,7 @@
     grid-column: 1;
     -ms-grid-row: 1;
     grid-row: 1;
-    background-image: url(../images/gray-jack-gold-tie-pants.png);
+    background-image: url(./images/gray-jack-gold-tie-pants.png);
     background-repeat: no-repeat;
     background-size: 50%;
     background-position: center;
@@ -889,7 +889,7 @@
     grid-row: 1;
     -ms-grid-column: 2;
     grid-column: 2;
-    background-image: url(../images/gray-jack-gold-tie-pants.png);
+    background-image: url(./images/gray-jack-gold-tie-pants.png);
     background-repeat: no-repeat;
     background-size: 50%;
     background-position: center;
@@ -900,7 +900,7 @@
     grid-row: 1;
     -ms-grid-column: 3;
     grid-column: 3;
-    background-image: url(../images/gray-jack-gold-tie.png);
+    background-image: url(./images/gray-jack-gold-tie.png);
     background-repeat: no-repeat;
     background-size: 50%;
     background-position: center;
@@ -911,7 +911,7 @@
     grid-row: 1;
     -ms-grid-column: 4;
     grid-column: 4;
-    background-image: url(../images/gray-jack-gold-tie.png);
+    background-image: url(./images/gray-jack-gold-tie.png);
     background-repeat: no-repeat;
     background-size: 50%;
     background-position: center;
@@ -1006,7 +1006,7 @@
     -ms-grid-row: 2;
     -ms-grid-row-span: 4;
     grid-row: 2 / 6;
-    background-image: url(../images/gray-jack-gold-tie2.png);
+    background-image: url(./images/gray-jack-gold-tie2.png);
     background-size: 75%;
     background-repeat: no-repeat;
     background-position: center;
