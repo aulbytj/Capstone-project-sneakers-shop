@@ -18,7 +18,7 @@ features that I'm proud of is the navbar that I made with pure CSS and HTML
 
 ## Live Demo
 
-[Live Demo Link](https://rawcdn.githack.com/aulbytj/Capstone-project-sneakers-shop/1b97265d1e5a05feb3e42c01f308f1287bdf9223/index.html)
+[Live Demo Link](https://raw.githack.com/aulbytj/Capstone-project-sneakers-shop/build/index.html)
 
 ## Getting Started
 
