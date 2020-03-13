@@ -1,0 +1,1059 @@
+* {
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+$ul-bg: #f5f5f5;
+$linkAtHoverAnimation: rgba(106, 107, 107, 1);
+$black: rgba(0, 0, 0, 0.75);
+
+$ff-h: Helvetica,
+Arial,
+sans-serif;
+
+@media (max-width: 767px) {
+  .aside {
+    display: none;
+  }
+
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    display: grid;
+
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    grid-column: 1;
+    grid-row: 1;
+    height: 8vh;
+
+
+    .menu {
+      position: absolute;
+      top: 49%;
+      left: 54%;
+      cursor: pointer;
+      display: none;
+    }
+
+    .header {
+      display: grid;
+      height: 8vh;
+      position: relative;
+
+
+      .toggle {
+        display: none;
+      }
+
+      .toggle-label {
+        position: absolute;
+        top: 41%;
+        right: 3%;
+        cursor: pointer;
+
+        span,
+        span::before,
+        span::after {
+          display: block;
+          height: 2px;
+          background-color: rgba(0, 0, 0, 0.75);
+          width: 2em;
+          border-radius: 2px;
+          position: relative;
+        }
+
+        span::before,
+        span::after {
+          content: "";
+          position: absolute;
+        }
+
+        span::before {
+          top: 7px;
+          transform: scaleX(50%);
+          transform-origin: right;
+        }
+
+        span::after {
+          left: 2px;
+          top: -7px;
+          transform: scaleX(50%);
+          transform-origin: left;
+        }
+      }
+
+      .toggle:checked~nav a {
+        opacity: 1;
+        transition: opacity 250ms ease-in-out 800ms;
+      }
+
+      .toggle:checked~nav {
+        transform: scale(1, 1);
+      }
+
+      nav {
+        transform: scale(1, 0);
+        transition: transform 1000ms ease-in-out;
+        transform-origin: top;
+        background: transparent;
+        align-self: center;
+        position: absolute;
+        top: 100%;
+        width: 50vw;
+        height: 450px;
+        align-items: center;
+        z-index: 1;
+        margin: 0 -25% 0 25%;
+
+
+        .nav-ul {
+          background-color: rgba(100%, 100%, 100%, 1);
+          justify-content: space-around;
+          position: relative;
+          width: 50vw;
+          display: flex;
+          flex-direction: column;
+          list-style: none;
+          height: 100%;
+          align-items: center;
+          transition: width 300ms ease-in-out;
+          box-shadow: 8px 4px 19px -4px $black;
+          border-radius: 5px;
+          padding: 0;
+
+          &__items {
+            position: relative;
+          }
+
+          &__links {
+            text-decoration: none;
+            color: $black;
+            opacity: 0;
+            transition: opacity 150ms ease-in-out;
+          }
+
+          &__links:hover {
+            color: $linkAtHoverAnimation;
+            transition: color 600ms ease-in-out;
+          }
+
+          &__links::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: royalblue;
+            transition: width 300ms ease-in-out;
+          }
+
+          &__links:hover::before {
+            width: 100%;
+          }
+        }
+      }
+
+      &__brand {
+        position: relative;
+        left: 26px;
+        margin: 0;
+        top: 1em;
+        font-size: 0.625rem;
+        width: -moz-fit-content;
+
+
+
+
+
+        span {
+          color: rgba(41.2%, 41.2%, 41.2%, 1);
+          font-weight: 100;
+          position: absolute;
+          top: 27px;
+          left: 6px;
+        }
+      }
+
+
+
+      &__brand a {
+        color: rgba($color: #000000, $alpha: 0.95);
+      }
+
+      &__social {
+        display: none;
+        align-self: end;
+        position: absolute;
+        left: 43px;
+
+        ul {
+          list-style: none;
+          line-height: 2.5em;
+        }
+      }
+
+    }
+
+  }
+
+  main {
+    grid-column: 1;
+    grid-row: 2 / 6;
+    bottom: 3em;
+    position: relative;
+    top: 1em;
+
+
+    .main-content {
+      display: grid;
+      grid-gap: 3px;
+      height: auto;
+    }
+
+
+    .content {
+      background-color: #dddfe4;
+
+    }
+
+    .content:nth-of-type(1) {
+      height: 30;
+      grid-column: 1;
+      grid-row: 1;
+      background-image: url(../images/gray-jack-gold-tie2.png);
+      background-size: 50%;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 60vh;
+    }
+
+    .content:nth-of-type(2) {
+      display: none;
+      height: 30vh;
+      grid-row: 1;
+      grid-column: 2;
+    }
+
+    .content:nth-of-type(3) {
+      display: none;
+      height: 30vh;
+      grid-row: 1;
+      grid-column: 3;
+    }
+
+    .content:nth-of-type(4) {
+      display: none;
+      height: 30vh;
+      grid-row: 1;
+      grid-column: 3;
+    }
+
+    .content:nth-of-type(5) {
+      height: 10vh;
+      grid-column: 1;
+      grid-row: 2;
+      align-content: normal;
+
+      display: inline-flex;
+
+      justify-content: space-around;
+
+      align-items: center;
+
+    }
+
+    .content:nth-of-type(6) {
+      display: inline-flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 10vh;
+      grid-column: 1;
+      grid-row: 3;
+
+    }
+
+    .content:nth-of-type(7) {
+      height: 40vh;
+      grid-column: 1;
+      grid-row: 4 / 5;
+      display: grid;
+      padding: 6em;
+      align-content: center;
+      text-align: center;
+      font-size: larger;
+
+
+
+      p {
+        text-align: center;
+      }
+
+    }
+
+    .content:nth-of-type(8) {
+      height: 10vh;
+      grid-column: 1;
+      grid-row: 5;
+      width: 30%;
+
+      display: grid;
+
+      font-size: xx-large;
+
+      text-align: center;
+
+      align-content: center;
+
+    }
+
+    .content:nth-of-type(9) {
+      height: 10vh;
+      grid-column: 1;
+      grid-row: 5;
+      width: 69.6%;
+      display: grid;
+      justify-self: flex-end;
+      align-content: center;
+
+      justify-content: center;
+
+    }
+
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .aside {
+    display: none;
+  }
+
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    grid-column: 1;
+    grid-row: 1;
+    height: 8vh;
+
+    .menu {
+      position: absolute;
+      top: 49%;
+      left: 54%;
+      cursor: pointer;
+      display: none;
+    }
+
+    .header {
+      display: grid;
+      height: 8vh;
+      position: relative;
+
+      .toggle {
+        display: none;
+      }
+
+      .toggle-label {
+        position: absolute;
+        top: 41%;
+        right: 3%;
+        cursor: pointer;
+
+        span,
+        span::before,
+        span::after {
+          display: block;
+          height: 2px;
+          background-color: rgba(0, 0, 0, 0.75);
+          width: 2em;
+          border-radius: 2px;
+          position: relative;
+        }
+
+        span::before,
+        span::after {
+          content: "";
+          position: absolute;
+        }
+
+        span::before {
+          top: 7px;
+          transform: scaleX(50%);
+          transform-origin: right;
+        }
+
+        span::after {
+          left: 2px;
+          top: -7px;
+          transform: scaleX(50%);
+          transform-origin: left;
+        }
+      }
+
+      .toggle:checked~nav a {
+        opacity: 1;
+        transition: opacity 250ms ease-in-out 800ms;
+      }
+
+      .toggle:checked~nav {
+        transform: scale(1, 1);
+      }
+
+      nav {
+        transform: scale(1, 0);
+        transition: transform 1000ms ease-in-out;
+        transform-origin: top;
+        background: transparent;
+        align-self: center;
+        position: absolute;
+        top: 100%;
+        width: 50vw;
+        height: 450px;
+        align-items: center;
+        z-index: 1;
+        margin: 0 -25% 0 25%;
+
+        .nav-ul {
+          background-color: $ul-bg;
+          justify-content: space-around;
+          position: relative;
+          width: 50vw;
+          display: flex;
+          flex-direction: column;
+          list-style: none;
+          height: 100%;
+          align-items: center;
+          transition: width 300ms ease-in-out;
+          box-shadow: 8px 4px 19px -4px $black;
+          border-radius: 5px;
+          padding: 0;
+
+          &__items {
+            position: relative;
+          }
+
+          &__links {
+            text-decoration: none;
+            color: $black;
+            opacity: 0;
+            transition: opacity 150ms ease-in-out;
+          }
+
+          &__links:hover {
+            color: $linkAtHoverAnimation;
+            transition: color 600ms ease-in-out;
+          }
+
+          &__links::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: royalblue;
+            transition: width 300ms ease-in-out;
+          }
+
+          &__links:hover::before {
+            width: 100%;
+          }
+        }
+      }
+
+      &__brand {
+        position: relative;
+        left: 26px;
+        margin: 0;
+        top: 1em;
+        font-size: 0.625rem;
+        width: -moz-fit-content;
+
+        span {
+          color: rgba(41.2%, 41.2%, 41.2%, 1);
+          font-weight: 100;
+          position: absolute;
+          top: 27px;
+          left: 6px;
+        }
+      }
+
+      &__brand a {
+        color: rgba($color: #000000, $alpha: 0.95);
+      }
+
+      &__social {
+        display: none;
+        align-self: end;
+        position: absolute;
+        left: 43px;
+
+        ul {
+          list-style: none;
+          line-height: 2.5em;
+        }
+      }
+    }
+  }
+
+  main {
+    grid-column: 1;
+    grid-row: 2 / 6;
+    bottom: 3em;
+    position: relative;
+    top: 1em;
+
+    .main-content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1 / auto;
+      grid-gap: 3px;
+      height: auto;
+    }
+
+    .content {
+      background-color: #dddfe4;
+    }
+
+    .content:nth-of-type(1) {
+      grid-column: 1 / span 2;
+      grid-row: 1;
+      background-image: url(../images/gray-jack-gold-tie2.png);
+      background-size: 28%;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 30vh;
+    }
+
+    .content:nth-of-type(2) {
+      background-image: url(../images/gray-jack-gold-tie-pants.png);
+      background-size: 56%;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 30vh;
+      grid-row: 1;
+      grid-column: 3;
+    }
+
+    .content:nth-of-type(3) {
+      display: none;
+      height: 30vh;
+      grid-row: 1;
+      grid-column: 3;
+    }
+
+    .content:nth-of-type(4) {
+      display: none;
+      height: 30vh;
+      grid-row: 1;
+      grid-column: 4;
+    }
+
+    .content:nth-of-type(5) {
+      height: 24vh;
+      grid-column: 1;
+      grid-row: 2;
+      align-content: normal;
+      display: inline-flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .content:nth-of-type(6) {
+      display: inline-flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 10vh;
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    .content:nth-of-type(7) {
+      height: 50vh;
+      grid-column: 1;
+      grid-row: 4 / 7;
+      display: grid;
+      padding: 2em;
+      align-content: flex-start;
+
+      p {
+        text-align: left;
+      }
+
+    }
+
+    .content:nth-of-type(8) {
+      height: 10vh;
+      grid-column: 2;
+      grid-row: 6;
+      width: 62%;
+      display: grid;
+      font-size: xx-large;
+      text-align: center;
+      align-content: center;
+    }
+
+    .content:nth-of-type(9) {
+      height: 10vh;
+      grid-column: 2 / span 3;
+      grid-row: 6;
+      width: 69%;
+      justify-self: flex-end;
+      display: grid;
+      align-content: center;
+      justify-content: center;
+    }
+
+    .content:nth-of-type(10) {
+      background-image: url(../images/gray-jack-gold-tie2.png);
+      background-size: 75%;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 75vh;
+      grid-column: 2 / 4;
+      grid-row: 2 / 6;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    overflow: hidden;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+  }
+
+  header {
+    grid-column: 1;
+    grid-row: 1 / 6;
+
+    .menu {
+      position: absolute;
+      top: 49%;
+      left: 54%;
+      cursor: pointer;
+    }
+
+    .header {
+      display: grid;
+      height: 100vh;
+      position: relative;
+
+      .toggle {
+        display: none;
+      }
+
+      .toggle-label {
+        position: absolute;
+        top: 50%;
+        right: 62%;
+        cursor: pointer;
+
+        span,
+        span::before,
+        span::after {
+          display: block;
+          height: 2px;
+          background-color: rgba(0, 0, 0, 0.75);
+          width: 2em;
+          border-radius: 2px;
+          position: relative;
+        }
+
+        span::before,
+        span::after {
+          content: "";
+          position: absolute;
+        }
+
+        span::before {
+          top: 7px;
+          transform: scaleX(50%);
+          transform-origin: right;
+        }
+
+        span::after {
+          left: 2px;
+          top: -7px;
+          transform: scaleX(50%);
+          transform-origin: left;
+        }
+      }
+
+      .toggle:checked~nav a {
+        opacity: 1;
+        transition: opacity 250ms ease-in-out 800ms;
+      }
+
+      .toggle:checked~nav {
+        transform: scale(1, 1);
+      }
+
+      nav {
+        transform: scale(0, 1);
+        transition: transform 1000ms ease-in-out;
+        transform-origin: left;
+        background: transparent;
+        align-self: center;
+        position: absolute;
+        left: 100%;
+        width: 100vw;
+        height: 450px;
+        align-items: center;
+        z-index: 1;
+
+
+        .nav-ul {
+          background-color: $ul-bg;
+          justify-content: space-around;
+          position: relative;
+          width: 75vw;
+          display: flex;
+          list-style: none;
+          height: 100%;
+          align-items: center;
+          transition: width 300ms ease-in-out;
+          box-shadow: 8px 4px 19px -4px $black;
+          border-radius: 5px;
+
+          &__items {
+            position: relative;
+          }
+
+          &__links {
+            text-decoration: none;
+            color: $black;
+            opacity: 0;
+            transition: opacity 150ms ease-in-out;
+          }
+
+          &__links:hover {
+            color: $linkAtHoverAnimation;
+            transition: color 600ms ease-in-out;
+          }
+
+          &__links::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: royalblue;
+            transition: width 300ms ease-in-out;
+          }
+
+          &__links:hover::before {
+            width: 100%;
+          }
+        }
+      }
+
+      &__brand {
+        position: relative;
+        left: -11px;
+        margin: 0;
+        top: 1em;
+        font-size: 0.625rem;
+        text-align: center;
+
+        span {
+          color: rgba(41.2%, 41.2%, 41.2%, 1);
+          font-weight: 100;
+          position: absolute;
+          top: 25px;
+          left: 87px;
+        }
+      }
+
+      &__brand a {
+        color: rgba($color: #000000, $alpha: 0.95);
+      }
+
+      &__social {
+        align-self: end;
+        position: absolute;
+        left: 43px;
+
+        ul {
+          list-style: none;
+          line-height: 2.5em;
+        }
+      }
+    }
+  }
+
+  main {
+    grid-column: 2;
+    grid-row: 1 / 6;
+    bottom: 3em;
+    position: relative;
+
+    .main-content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1 / auto;
+      grid-gap: 3px;
+      height: auto;
+    }
+
+    .content {
+      background-color: #dddfe4;
+    }
+
+    .content:nth-of-type(1) {
+      height: 30vh;
+      grid-column: 1;
+      grid-row: 1;
+      background-image: url(../images/gray-jack-gold-tie-pants.png);
+      background-repeat: no-repeat;
+      background-size: 50%;
+      background-position: center;
+    }
+
+    .content:nth-of-type(2) {
+      height: 30vh;
+      grid-row: 1;
+      grid-column: 2;
+      background-image: url(../images/gray-jack-gold-tie-pants.png);
+      background-repeat: no-repeat;
+      background-size: 50%;
+      background-position: center;
+    }
+
+    .content:nth-of-type(3) {
+      height: 30vh;
+      grid-row: 1;
+      grid-column: 3;
+      background-image: url(../images/gray-jack-gold-tie.png);
+      background-repeat: no-repeat;
+      background-size: 50%;
+      background-position: center;
+    }
+
+    .content:nth-of-type(4) {
+      height: 30vh;
+      grid-row: 1;
+      grid-column: 4;
+      background-image: url(../images/gray-jack-gold-tie.png);
+      background-repeat: no-repeat;
+      background-size: 50%;
+      background-position: center;
+    }
+
+    .content:nth-of-type(5) {
+      height: 16vh;
+      grid-column: 1 / span 2;
+      grid-row: 2;
+      align-content: normal;
+      display: inline-flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .content:nth-of-type(6) {
+      display: inline-flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 10vh;
+      grid-column: 1 / span 2;
+      grid-row: 3;
+    }
+
+    .content:nth-of-type(7) {
+      height: 40vh;
+      grid-column: 1 / span 2;
+      grid-row: 4 / 5;
+      display: grid;
+      padding: 2em;
+      align-content: flex-start;
+
+      p {
+        text-align: left;
+      }
+    }
+
+    .content:nth-of-type(8) {
+      height: 10vh;
+      grid-column: 1;
+      grid-row: 5;
+      width: 62%;
+      display: grid;
+      font-size: xx-large;
+      text-align: center;
+      align-content: center;
+    }
+
+    .content:nth-of-type(9) {
+      height: 10vh;
+      grid-column: 1 / span 2;
+      grid-row: 5;
+      width: 69%;
+      justify-self: flex-end;
+      display: grid;
+      align-content: center;
+      justify-content: center;
+    }
+
+    .content:nth-of-type(10) {
+      height: 75vh;
+      grid-column: 3 / 5;
+      grid-row: 2 / 6;
+      background-image: url(../images/gray-jack-gold-tie2.png);
+      background-size: 75%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  aside {
+    grid-column: 3;
+    grid-row: 1 / 6;
+
+    z-index: 1;
+
+    .aside {
+      padding-right: 15px;
+      height: 900px;
+      position: sticky;
+      top: 0;
+      background: white;
+
+      .group {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+
+        .aside__cart {
+          padding: 0 0 7em;
+        }
+
+        .account {
+          padding: 4em 0.8em;
+        }
+      }
+
+
+      p {
+        margin: 0;
+        position: relative;
+        top: 57px;
+      }
+
+      .cart::after {
+        content: 'O';
+        text-align: center;
+        color: rgba(100%, 100%, 100%, 1);
+        height: 100px;
+        width: 100px;
+        background: black;
+        border: 10px solid black;
+        border-radius: 100%;
+        padding-left: 3px;
+        margin-left: 1em;
+      }
+
+      .vert {
+        display: none;
+        transform: rotate(90deg);
+        position: absolute;
+        right: 0;
+        margin: 45em 0 0;
+      }
+
+      .search {
+        $size: 40px;
+        border: 2px solid $ul-bg;
+        display: flex;
+        width: 220px;
+        border-radius: 50px;
+        height: $size;
+        width: $size;
+        padding: 3px;
+        position: relative;
+        transition: width 300ms cubic-bezier(.22, .21, .27, 1.25);
+        overflow: hidden;
+
+        &__input {
+          flex-grow: 1;
+          font-size: 1rem;
+          padding: 0 0.1em;
+          border: none;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          line-height: $size - 5px;
+          opacity: 0;
+          cursor: pointer;
+
+          &:focus {
+            outline: 0;
+          }
+        }
+
+        &:focus-within {
+          width: 100%;
+
+          .search__input {
+            opacity: 1;
+            cursor: initial;
+          }
+
+          .search__submit {
+            background: $black;
+            color: rgba(100%, 100%, 100%, 1);
+
+            &:focus,
+            &:hover {
+              outline: 0;
+              box-shadow: 0 0 5px rgba($color: #7e4d03, $alpha: 0.35);
+            }
+          }
+        }
+
+        &__submit {
+          cursor: pointer;
+          font-size: 1rem;
+          border: 0;
+          border-radius: 100%;
+          background: transparent;
+          height: $size - 10px;
+          width: $size - 10px;
+          color: rgb(5, 5, 5);
+          margin-left: auto;
+          transition: background 150ms ease-in-out;
+        }
+
+      }
+    }
+  }
+
+  .categories__items {
+    animation: appear 3s;
+  }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+
+}
